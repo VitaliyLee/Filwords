@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dictionary>
+    <Node id="0" Text="АМБАР"/>
+    <Node id="1" Text="ВАФЛЯ"/>
+    <Node id="2" Text="БУФЕТ"/>
+    <Node id="3" Text="ОБРАЗ"/>
+    <Node id="4" Text="ГАРАЖ"/>
+</dictionary>
