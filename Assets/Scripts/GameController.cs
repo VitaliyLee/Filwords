@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private FieldController fieldController;
+    [SerializeField] private GameObject letterTextObject;
+    [SerializeField] private TextMeshProUGUI answerLetters;
 
-    private List<CardController> selectedCardsList;
-
+    private List<CardData> selectedCardsList;
+    private string currentWord;
     private bool isDragging;
 
     private void Start()
     {
-        selectedCardsList = new List<CardController>();
+        selectedCardsList = new List<CardData>();
     }
 
     void Update()
@@ -25,6 +27,7 @@ public class GameController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            currentWord = "";
             isDragging = false;
 
             for (int i = 0; i < selectedCardsList.Count; i++)
@@ -40,6 +43,13 @@ public class GameController : MonoBehaviour
                 selectedCardsList[selectedCardsList.Count - 1].image.color = Color.red; // Применяем изменения
             }
         }
+
+        if(answerLetters.text != "")
+            letterTextObject.SetActive(true);
+        else
+            letterTextObject.SetActive(false);
+
+        answerLetters.text = currentWord;//Потом придумать что нибудь ПОЛУЧШЕ!!!
     }
 
     private bool IsPointerOverUIObject()
@@ -59,11 +69,13 @@ public class GameController : MonoBehaviour
         // Проверяем, есть ли наш целевой Button среди результатов
         foreach (RaycastResult result in results)
         {
-            CardController cardController = result.gameObject.GetComponent<CardController>();
+            CardData cardController = result.gameObject.GetComponent<CardData>();//Тут желательно тоже выбрать ДРУГОЕ решение, но пока пусть так
 
-            if (cardController)
+            if (!selectedCardsList.Contains(cardController) && cardController != null)
             {
                 selectedCardsList.Add(cardController);
+                currentWord += cardController.textLetter.text;
+
                 return true;
             }
         }

@@ -9,13 +9,13 @@ public class FieldController : MonoBehaviour
 {
     [SerializeField] private string xmlFileName; // Имя файла без расширения
     [SerializeField] private int wordsCount;
-    [SerializeField] private List<CardController> cardsList;
+    [SerializeField] private List<CardData> cardsList;
 
     private DictionaryController dictionaryController; //Класс управляющий словарями
     private Dictionary<string, string> dictionary; //Собственно сам словарь
 
     private List<string> selectedWordsList;//Список слов на уровне
-    private CardController[,] cardsMatrix;//Нужен что бы из cardsList сделать матрицу для удобства работы
+    private CardData[,] cardsMatrix;//Нужен что бы из cardsList сделать матрицу для удобства работы
 
     private void Start()
     {
@@ -34,7 +34,7 @@ public class FieldController : MonoBehaviour
         //индекс нужен потому, что проще сопоставить список с матрицей не смог 
         int listIndex = 0;
 
-        cardsMatrix = new CardController[fieldScale, fieldScale];
+        cardsMatrix = new CardData[fieldScale, fieldScale];
 
         for (int i = 0; i < fieldScale; i++)
         {
