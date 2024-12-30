@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patterns : MonoBehaviour
+public class Patterns
 {
     private static List<Vector2Int[,]> patternsList = new List<Vector2Int[,]>()
     {

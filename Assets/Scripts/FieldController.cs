@@ -41,11 +41,14 @@ public class FieldController : MonoBehaviour
             for (int j = 0; j < fieldScale; j++)
             {
                 cardsMatrix[i, j] = cardsList[listIndex];
+                cardsMatrix[i, j].cardIndex = new Vector2Int(i, j);
+
                 listIndex++;
             }
         }
     }
 
+    //¬ыбирает слова дл€ уровн€
     private void SelectWords()
     {
         int wordIndex = 0;
@@ -66,8 +69,7 @@ public class FieldController : MonoBehaviour
     //ѕока просто перебиваем матрицу с буквами в карточки
     private void FillPlayingField(int fieldScale)
     {
-        int x= 0;
-        int y= 0;
+        int x, y= 0;
 
         for (int i = 0; i < fieldScale; i++)
         {
