@@ -6,16 +6,24 @@ using UnityEngine.EventSystems;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private FieldController fieldController;
     [SerializeField] private GameObject letterTextObject;
     [SerializeField] private TextMeshProUGUI answerLetters;
+    [SerializeField] private List<Color> colorsList;
 
     private List<CardData> selectedCardsList;
+    private List<CardData> disableCardsList;
+
     private string currentWord;
     private bool isDragging;
 
+    private int currentColorIndex;//Прибавляется с каждым отгаданным словом, потом обнуляется
+    
     private void Start()
     {
+        currentColorIndex = 0;
         selectedCardsList = new List<CardData>();
+        disableCardsList = new List<CardData>();
     }
 
     void Update()
@@ -27,24 +35,28 @@ public class GameController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            //Если слово угадано
+            if(fieldController.SelectedWordsList.Contains(currentWord))
+            {
+                for (int i = 0; i < selectedCardsList.Count; i++)
+                    disableCardsList.Add(selectedCardsList[i]);//Запись ячеек в список отгаданных
+                currentColorIndex++;
+            }
+
+            else
+                for (int i = 0; i < selectedCardsList.Count; i++)
+                    selectedCardsList[i].image.color = Color.white;
+
             currentWord = "";
             isDragging = false;
-
-            for (int i = 0; i < selectedCardsList.Count; i++)
-                selectedCardsList[i].image.color = Color.white;
-
             selectedCardsList.Clear();
         }
 
         if (isDragging)
-        {
-            if (IsPointerOverUIObject())
-            {
-                selectedCardsList[selectedCardsList.Count - 1].image.color = Color.red; // Применяем изменения
-            }
-        }
+            IsPointerOverUIObject();
 
-        if(answerLetters.text != "")
+        //Управление текстом ответа
+        if (answerLetters.text != "")
             letterTextObject.SetActive(true);
         else
             letterTextObject.SetActive(false);
@@ -71,12 +83,24 @@ public class GameController : MonoBehaviour
         {
             CardData cardController = result.gameObject.GetComponent<CardData>();//Тут желательно тоже выбрать ДРУГОЕ решение, но пока пусть так
 
-            if (!selectedCardsList.Contains(cardController) && cardController != null)
+            if (!disableCardsList.Contains(cardController) && !selectedCardsList.Contains(cardController) && cardController != null)//disableCardsList - список не доступных ячеек (например потому что слова из них уже составлены)
             {
-                selectedCardsList.Add(cardController);
-                currentWord += cardController.textLetter.text;
+                if (selectedCardsList.Count > 0 && !cardController.IsNeighbour(selectedCardsList[selectedCardsList.Count - 1].cardIndex))//IsNeighbour проверяет является ли выбранная ячейка соседом последней ячейки из списка выделенных
+                    return false;
+
+                selectedCardsList.Add(cardController);//Добавляет в список выделенных объектов
+                cardController.image.color = colorsList[currentColorIndex];//Красит выбранный объект
+                currentWord += cardController.textLetter.text;//Добавляет выбранную букву к результирубщему слову
 
                 return true;
+            }
+
+            //Проверка на "обратный ход". Если вести курсор обратно по слову, то ячейки перестают выделяться, дропаются из списка выбранных и из результирубщего слова
+            if (selectedCardsList.Count > 1 && selectedCardsList[selectedCardsList.Count - 2] == cardController)
+            {
+                selectedCardsList[selectedCardsList.Count - 1].image.color = Color.white;
+                selectedCardsList.Remove(selectedCardsList[selectedCardsList.Count - 1]);
+                currentWord = currentWord.Remove(currentWord.Length - 1);
             }
         }
 

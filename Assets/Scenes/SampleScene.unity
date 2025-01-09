@@ -2967,8 +2967,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27ff71dc113d654ba3b57e2ce89c253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldController: {fileID: 907791690}
   letterTextObject: {fileID: 1237237948}
   answerLetters: {fileID: 482883374}
+  colorsList:
+  - {r: 0, g: 0.3443396, b: 0.3443396, a: 1}
+  - {r: 0.79607844, g: 0.28773582, b: 0.28773582, a: 1}
+  - {r: 0.3254717, g: 0.6798891, b: 1, a: 1}
+  - {r: 1, g: 0.8982618, b: 0.24056602, a: 1}
+  - {r: 1, g: 0.25, b: 0.62271225, a: 1}
 --- !u!1 &920847275
 GameObject:
   m_ObjectHideFlags: 0

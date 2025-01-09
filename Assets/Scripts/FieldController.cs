@@ -17,6 +17,8 @@ public class FieldController : MonoBehaviour
     private List<string> selectedWordsList;//Список слов на уровне
     private CardData[,] cardsMatrix;//Нужен что бы из cardsList сделать матрицу для удобства работы
 
+    public List<string> SelectedWordsList { get => selectedWordsList; }
+
     private void Start()
     {
         selectedWordsList = new List<string>();
