@@ -72,16 +72,46 @@ public class FieldController : MonoBehaviour
     private void FillPlayingField(int fieldScale)
     {
         int x, y= 0;
+        int patternIndex = 0;
+        //Vector2Int[,] currentMatrix = Patterns.Rotate90(Patterns.PatternsList[patternIndex]);
+        Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
+
 
         for (int i = 0; i < fieldScale; i++)
         {
             for (int j = 0; j < fieldScale; j++)
             {
-                x = Patterns.PatternsList[0][i, j].x;
-                y = Patterns.PatternsList[0][i, j].y;
+                x = currentMatrix[i, j].x;
+                y = currentMatrix[i, j].y;
 
-                cardsMatrix[x, y].textLetter.text = selectedWordsList[i][j].ToString();
+                cardsMatrix[y, fieldScale - x - 1].textLetter.text = selectedWordsList[i][fieldScale - j - 1].ToString();
             }
+            Debug.Log(selectedWordsList[i]);
         }
     }
+
+    //Делаю паттерн туда-сюда
+
+    //Поворот паттернов
+
+    //1. cardsMatrix[x, y].textLetter.text = selectedWordsList[i][j].ToString(); - обычное заполнение 
+
+    //2. cardsMatrix[y, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString(); - Обычный поворот на 90 градусов по часовой стрелке
+
+    //3. cardsMatrix[fieldScale - y - 1, x].textLetter.text = selectedWordsList[i][j].ToString(); - Обычный поворот на 90 градусов против часовой стрелки
+
+    //4. cardsMatrix[fieldScale - x - 1, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString(); - Обычный поворот на 180 градусов
+
+    //Отражение паттернов с поворотом
+
+    //5. cardsMatrix[x, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString(); - Отзеркаливает паттерн
+
+    //6. cardsMatrix[fieldScale - y - 1, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString(); - Отзеркаливает и поворачивает на 90 градусов по часовой стрелке
+
+    //7. cardsMatrix[y, x].textLetter.text = selectedWordsList[i][j].ToString(); - Поворачиват на 90 градусов против часовой стрелки и отзеркаливает паттерн
+
+    //8. cardsMatrix[fieldScale - x - 1, y].textLetter.text = selectedWordsList[i][j].ToString(); - Поворачивает на 180 градусов и отзеркаливает паттерн
+
+
+    //9. cardsMatrix[x, y].textLetter.text = selectedWordsList[i][fieldScale - j - 1].ToString(); - Делает слова в задом наперед. Что бы комбинировать с другими модификациями нужно заменить на selectedWordsList[i][fieldScale - j - 1].ToString() выбранную букву
 }

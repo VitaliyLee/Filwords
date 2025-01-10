@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,4 +18,21 @@ public class Patterns
     };
 
     public static List<Vector2Int[,]> PatternsList { get => patternsList;}
+
+    public static Vector2Int[,] Rotate90(Vector2Int[,] matrix)
+    {
+        int n = matrix.GetLength(0);
+        int m = matrix.GetLength(1);
+        Vector2Int[,] rotated = new Vector2Int[m, n];
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                rotated[m - j - 1, i] = matrix[i, j];
+            }
+        }
+
+        return rotated;
+    }
 }
