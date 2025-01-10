@@ -1,14 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using TMPro;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FieldController : MonoBehaviour
 {
+    [SerializeField] private int startLevel;//На релизе поменять на закрытую переменую. Она будет СОХРАНЯТЬСЯ
+
     [SerializeField] private string xmlFileName; // Имя файла без расширения
     [SerializeField] private int wordsCount;
+    [SerializeField] private int fieldSize;
     [SerializeField] private List<CardData> cardsList;
 
     private DictionaryController dictionaryController; //Класс управляющий словарями
@@ -17,7 +22,10 @@ public class FieldController : MonoBehaviour
     private List<string> selectedWordsList;//Список слов на уровне
     private CardData[,] cardsMatrix;//Нужен что бы из cardsList сделать матрицу для удобства работы
 
+    private int patternModsCount = 8; //Колличество модификаторов паттерна
+
     public List<string> SelectedWordsList { get => selectedWordsList; }
+    public int FieldSize { get => fieldSize; }
 
     private void Start()
     {
@@ -25,9 +33,9 @@ public class FieldController : MonoBehaviour
         dictionaryController = new DictionaryController();
         dictionary = dictionaryController.GetDictionary(xmlFileName);
 
-        InitializeCardsMatrix(wordsCount);
+        InitializeCardsMatrix(fieldSize);
         SelectWords();
-        FillPlayingField(wordsCount);
+        FillPlayingField(fieldSize, startLevel);
     }
 
     //Что бы удобнее было работать с карточками букв, запихиваем их в матрицу
@@ -69,13 +77,23 @@ public class FieldController : MonoBehaviour
     }
 
     //Пока просто перебиваем матрицу с буквами в карточки
-    private void FillPlayingField(int fieldScale)
+    private void FillPlayingField(int fieldScale, int level)
     {
-        int x, y= 0;
-        int patternIndex = 0;
-        //Vector2Int[,] currentMatrix = Patterns.Rotate90(Patterns.PatternsList[patternIndex]);
-        Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
+        //Колличество модификаторов паттернов = 8
+        int x, y = 0;
 
+        int patternIndex = 0;
+        int patternModIndex = level % patternModsCount;
+
+        for (int i = 0; i < 160; i++)
+        {
+            if(i % 8 == 0)
+            Debug.Log($"{i % 8} :::::::::::: {i % 8}");
+        }
+
+        Debug.Log(level % 8);
+        Debug.Log(patternModIndex);
+        Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
 
         for (int i = 0; i < fieldScale; i++)
         {
@@ -84,13 +102,48 @@ public class FieldController : MonoBehaviour
                 x = currentMatrix[i, j].x;
                 y = currentMatrix[i, j].y;
 
-                cardsMatrix[y, fieldScale - x - 1].textLetter.text = selectedWordsList[i][fieldScale - j - 1].ToString();
+                switch (patternModIndex)
+                {
+                    case 1:
+                        cardsMatrix[x, y].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                    case 2:
+                        cardsMatrix[y, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                    case 3:
+                        cardsMatrix[fieldScale - y - 1, x].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                    case 4:
+                        cardsMatrix[fieldScale - x - 1, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                    case 5:
+                        cardsMatrix[x, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                    case 6:
+                        cardsMatrix[fieldScale - y - 1, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                    case 7:
+                        cardsMatrix[y, x].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                    case 8:
+                        cardsMatrix[fieldScale - x - 1, y].textLetter.text = selectedWordsList[i][j].ToString();
+                        break;
+                }
             }
             Debug.Log(selectedWordsList[i]);
         }
     }
 
-    //Делаю паттерн туда-сюда
+    public void NewLevel()
+    {
+        startLevel++;
+        selectedWordsList.Clear();
+
+        SelectWords();
+        FillPlayingField(fieldSize, startLevel);
+    }
+
+    //Делаю паттерн туда-сюда 72
 
     //Поворот паттернов
 

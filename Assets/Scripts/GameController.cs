@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private GameObject winPanel;
+
     [SerializeField] private FieldController fieldController;
     [SerializeField] private GameObject letterTextObject;
     [SerializeField] private TextMeshProUGUI answerLetters;
@@ -35,33 +37,17 @@ public class GameController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            //Если слово угадано
-            if(fieldController.SelectedWordsList.Contains(currentWord))
-            {
-                for (int i = 0; i < selectedCardsList.Count; i++)
-                    disableCardsList.Add(selectedCardsList[i]);//Запись ячеек в список отгаданных
-                currentColorIndex++;
-            }
-
-            else
-                for (int i = 0; i < selectedCardsList.Count; i++)
-                    selectedCardsList[i].image.color = Color.white;
+            CheckCorrectnessWord();
 
             currentWord = "";
             isDragging = false;
             selectedCardsList.Clear();
         }
-
+        
         if (isDragging)
             IsPointerOverUIObject();
 
-        //Управление текстом ответа
-        if (answerLetters.text != "")
-            letterTextObject.SetActive(true);
-        else
-            letterTextObject.SetActive(false);
-
-        answerLetters.text = currentWord;//Потом придумать что нибудь ПОЛУЧШЕ!!!
+        SetAnswerLetters();
     }
 
     private bool IsPointerOverUIObject()
@@ -105,5 +91,46 @@ public class GameController : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void SetAnswerLetters()
+    {
+        //Управление текстом ответа
+        if (answerLetters.text != "")
+            letterTextObject.SetActive(true);
+        else
+            letterTextObject.SetActive(false);
+
+        answerLetters.text = currentWord;//Потом придумать что нибудь ПОЛУЧШЕ!!!
+    }
+
+    private void CheckCorrectnessWord()
+    {
+        //Если слово угадано
+        if (fieldController.SelectedWordsList.Contains(currentWord))
+        {
+            for (int i = 0; i < selectedCardsList.Count; i++)
+                disableCardsList.Add(selectedCardsList[i]);//Запись ячеек в список отгаданных
+            currentColorIndex++;
+        }
+
+        else
+            for (int i = 0; i < selectedCardsList.Count; i++)
+                selectedCardsList[i].image.color = Color.white;
+
+        //Если все слова угаданы
+        if (disableCardsList.Count == fieldController.FieldSize * fieldController.FieldSize)
+            winPanel.SetActive(true);
+    }
+
+    public void NextLevel()
+    {
+        for (int i = 0; i < disableCardsList.Count; i++)
+            disableCardsList[i].image.color = Color.white;
+        disableCardsList.Clear();
+
+        currentColorIndex = 0;
+
+        fieldController.NewLevel();
     }
 }
