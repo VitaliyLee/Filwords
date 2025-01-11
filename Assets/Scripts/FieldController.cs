@@ -82,17 +82,9 @@ public class FieldController : MonoBehaviour
         //Колличество модификаторов паттернов = 8
         int x, y = 0;
 
-        int patternIndex = 0;
+        int patternIndex = 7;
         int patternModIndex = level % patternModsCount;
 
-        for (int i = 0; i < 160; i++)
-        {
-            if(i % 8 == 0)
-            Debug.Log($"{i % 8} :::::::::::: {i % 8}");
-        }
-
-        Debug.Log(level % 8);
-        Debug.Log(patternModIndex);
         Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
 
         for (int i = 0; i < fieldScale; i++)
@@ -104,28 +96,28 @@ public class FieldController : MonoBehaviour
 
                 switch (patternModIndex)
                 {
-                    case 1:
+                    case 0:
                         cardsMatrix[x, y].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
-                    case 2:
+                    case 1:
                         cardsMatrix[y, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
-                    case 3:
+                    case 2:
                         cardsMatrix[fieldScale - y - 1, x].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
-                    case 4:
+                    case 3:
                         cardsMatrix[fieldScale - x - 1, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
-                    case 5:
+                    case 4:
                         cardsMatrix[x, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
-                    case 6:
+                    case 5:
                         cardsMatrix[fieldScale - y - 1, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
-                    case 7:
+                    case 6:
                         cardsMatrix[y, x].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
-                    case 8:
+                    case 7:
                         cardsMatrix[fieldScale - x - 1, y].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                 }
