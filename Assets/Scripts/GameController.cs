@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject messagePanel;
 
     [SerializeField] private FieldController fieldController;
     [SerializeField] private GameObject letterTextObject;
@@ -159,7 +160,7 @@ public class GameController : MonoBehaviour
                 //Debug.Log($"Index: {i} ::: {fieldController.cm[y, selectedCardsList.Count - x - 1]} ::::: {selectedCardsList[i].cardIndex}");
                 if (fieldLetterPos != selectedCardsList[i].cardIndex)
                 {
-                    Debug.Log("Попробуй собрать слово по другому!");
+                    messagePanel.SetActive(true);
                     for (int j = 0; j < selectedCardsList.Count; j++)
                         selectedCardsList[j].image.color = Color.white;
                     return;
