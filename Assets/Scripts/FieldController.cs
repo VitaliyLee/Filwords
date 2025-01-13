@@ -63,18 +63,20 @@ public class FieldController : MonoBehaviour
     //¬ыбирает слова дл€ уровн€
     private void SelectWords()
     {
-        int wordIndex = 0;
+        int wordIndex = level * fieldSize + 1;
         string word = "";
 
         //¬ыбираем слова из списка так, что бы все 5 были уникальными
         while (selectedWordsList.Count < wordsCount)
         {
-            wordIndex = Random.Range(0, dictionary.Count);
+            //wordIndex = Random.Range(0, dictionary.Count);
             word = dictionaryController.GetTextById(wordIndex.ToString());
 
             //ѕродолжаем цикл, если в списке уже есть такое слово
             if (!selectedWordsList.Contains(word))
                 selectedWordsList.Add(word);
+
+            wordIndex++;
         }
     }
 
