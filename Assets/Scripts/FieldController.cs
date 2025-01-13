@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 
 public class FieldController : MonoBehaviour
 {
-    [SerializeField] private int startLevel;//На релизе поменять на закрытую переменую. Она будет СОХРАНЯТЬСЯ
+    [SerializeField] private int level;//На релизе поменять на закрытую переменую. Она будет СОХРАНЯТЬСЯ
 
     [SerializeField] private string xmlFileName; // Имя файла без расширения
     [SerializeField] private int wordsCount;
@@ -24,8 +24,10 @@ public class FieldController : MonoBehaviour
 
     private int patternModsCount = 8; //Колличество модификаторов паттерна
 
+    public int Level { get => level; }
     public List<string> SelectedWordsList { get => selectedWordsList; }
     public int FieldSize { get => fieldSize; }
+    public int PatternModsCount { get => patternModsCount; }
 
     private void Start()
     {
@@ -35,7 +37,7 @@ public class FieldController : MonoBehaviour
 
         InitializeCardsMatrix(fieldSize);
         SelectWords();
-        FillPlayingField(fieldSize, startLevel);
+        FillPlayingField(fieldSize);
     }
 
     //Что бы удобнее было работать с карточками букв, запихиваем их в матрицу
@@ -77,12 +79,12 @@ public class FieldController : MonoBehaviour
     }
 
     //Пока просто перебиваем матрицу с буквами в карточки
-    private void FillPlayingField(int fieldScale, int level)
+    private void FillPlayingField(int fieldScale)
     {
         //Колличество модификаторов паттернов = 8
         int x, y = 0;
 
-        int patternIndex = 7;
+        int patternIndex = (level / patternModsCount) % Patterns.PatternsList.Count;
         int patternModIndex = level % patternModsCount;
 
         Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
@@ -128,11 +130,11 @@ public class FieldController : MonoBehaviour
 
     public void NewLevel()
     {
-        startLevel++;
+        level++;
         selectedWordsList.Clear();
 
         SelectWords();
-        FillPlayingField(fieldSize, startLevel);
+        FillPlayingField(fieldSize);
     }
 
     //Делаю паттерн туда-сюда 72

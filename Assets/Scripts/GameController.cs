@@ -106,9 +106,66 @@ public class GameController : MonoBehaviour
 
     private void CheckCorrectnessWord()
     {
-        //Если слово угадано
+        int row = 0;
+        int x, y = 0;
+        Vector2Int fieldLetterPos = new Vector2Int();
+
+        int patternIndex = (fieldController.Level / fieldController.PatternModsCount) % Patterns.PatternsList.Count;
+        int patternModIndex = fieldController.Level % fieldController.PatternModsCount;
+
+        Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
+
+        //Проверка правильности слова и его составления
         if (fieldController.SelectedWordsList.Contains(currentWord))
         {
+            row = fieldController.SelectedWordsList.FindIndex(row => row.Contains(currentWord));//Находим индекс слова, тк позиция всех букв слова является СТРОКОЙ матрицы
+
+            //Проверка на тоЮ что слово составлено из нужных ячеек
+            for (int i = 0; i < selectedCardsList.Count; i++)
+            {
+                x = currentMatrix[row, i].x;
+                y = currentMatrix[row, i].y;
+
+                fieldLetterPos.x = y; fieldLetterPos.y = selectedCardsList.Count - x - 1;
+
+                switch (patternModIndex)
+                {
+                    case 0:
+                        fieldLetterPos.x = x; fieldLetterPos.y = y;
+                        break;
+                    case 1:
+                        fieldLetterPos.x = y; fieldLetterPos.y = selectedCardsList.Count - x - 1;
+                        break;
+                    case 2:
+                        fieldLetterPos.x = selectedCardsList.Count - y - 1; fieldLetterPos.y = x;
+                        break;
+                    case 3:
+                        fieldLetterPos.x = selectedCardsList.Count - x - 1; fieldLetterPos.y = selectedCardsList.Count - y - 1;
+                        break;
+                    case 4:
+                        fieldLetterPos.x = x; fieldLetterPos.y = selectedCardsList.Count - y - 1;
+                        break;
+                    case 5:
+                        fieldLetterPos.x = selectedCardsList.Count - y - 1; fieldLetterPos.y = selectedCardsList.Count - x - 1;
+                        break;
+                    case 6:
+                        fieldLetterPos.x = y; fieldLetterPos.y = x;
+                        break;
+                    case 7:
+                        fieldLetterPos.x = selectedCardsList.Count - x - 1; fieldLetterPos.y = y;
+                        break;
+                }
+
+                //Debug.Log($"Index: {i} ::: {fieldController.cm[y, selectedCardsList.Count - x - 1]} ::::: {selectedCardsList[i].cardIndex}");
+                if (fieldLetterPos != selectedCardsList[i].cardIndex)
+                {
+                    Debug.Log("Попробуй собрать слово по другому!");
+                    for (int j = 0; j < selectedCardsList.Count; j++)
+                        selectedCardsList[j].image.color = Color.white;
+                    return;
+                }
+            }
+
             for (int i = 0; i < selectedCardsList.Count; i++)
                 disableCardsList.Add(selectedCardsList[i]);//Запись ячеек в список отгаданных
             currentColorIndex++;
