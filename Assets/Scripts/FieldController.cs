@@ -1,16 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
-using TMPro;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class FieldController : MonoBehaviour
+public class FieldController
 {
-    [SerializeField] private int level;//На релизе поменять на закрытую переменую. Она будет СОХРАНЯТЬСЯ
-
+    private int level;//На релизе поменять на закрытую переменую. Она будет СОХРАНЯТЬСЯ
     private int fieldSize;
 
     private List<CardData> cardsList;
@@ -20,25 +14,25 @@ public class FieldController : MonoBehaviour
     private CardData[,] cardsMatrix;//Нужен что бы из cardsList сделать матрицу для удобства работы
 
     Vector2Int[,] currentMatrix;
-
     private int patternModsCount = 8; //Колличество модификаторов паттерна
 
     public int Level { get => level; }
     public List<string> SelectedWordsList { get => selectedWordsList; }
-    public int FieldSize { get => fieldSize; }
-    public int PatternModsCount { get => patternModsCount; }
-    public Vector2Int[,] CurrentMatrix { get => currentMatrix; }
-    public List<CardData> CardsList { set => cardsList = value; }
 
-    public void Init(string xmlDictionaryName)
+    public Vector2Int[,] CurrentMatrix { get => currentMatrix; }
+    public int PatternModsCount { get => patternModsCount; }
+
+    public FieldController(string xmlDictionaryName, int Level, List<CardData> CardsDataList)
     {
+        level = Level;
+        cardsList = CardsDataList;
         fieldSize = (int)MathF.Sqrt(cardsList.Count);
         selectedWordsList = new List<string>();
         dictionary = new DictionaryController().GetDictionary(xmlDictionaryName);
 
         InitializeCardsMatrix(fieldSize);
         SelectWords();
-        FillPlayingField(fieldSize);
+        FillPlayingField();
     }
 
     //Что бы удобнее было работать с карточками букв, запихиваем их в матрицу
@@ -83,15 +77,15 @@ public class FieldController : MonoBehaviour
     }
 
     //Пока просто перебиваем матрицу с буквами в карточки
-    private void FillPlayingField(int fieldScale)
+    private void FillPlayingField()
     {
         currentMatrix = GetFieldMatrix();
         int patternModIndex = level % patternModsCount;
         int x, y = 0;
 
-        for (int i = 0; i < fieldScale; i++)
+        for (int i = 0; i < fieldSize; i++)
         {
-            for (int j = 0; j < fieldScale; j++)
+            for (int j = 0; j < fieldSize; j++)
             {
                 x = currentMatrix[i, j].x;
                 y = currentMatrix[i, j].y;
@@ -102,25 +96,25 @@ public class FieldController : MonoBehaviour
                         cardsMatrix[x, y].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                     case 1:
-                        cardsMatrix[y, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        cardsMatrix[y, fieldSize - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                     case 2:
-                        cardsMatrix[fieldScale - y - 1, x].textLetter.text = selectedWordsList[i][j].ToString();
+                        cardsMatrix[fieldSize - y - 1, x].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                     case 3:
-                        cardsMatrix[fieldScale - x - 1, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        cardsMatrix[fieldSize - x - 1, fieldSize - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                     case 4:
-                        cardsMatrix[x, fieldScale - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        cardsMatrix[x, fieldSize - y - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                     case 5:
-                        cardsMatrix[fieldScale - y - 1, fieldScale - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
+                        cardsMatrix[fieldSize - y - 1, fieldSize - x - 1].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                     case 6:
                         cardsMatrix[y, x].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                     case 7:
-                        cardsMatrix[fieldScale - x - 1, y].textLetter.text = selectedWordsList[i][j].ToString();
+                        cardsMatrix[fieldSize - x - 1, y].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                 }
             }
@@ -132,16 +126,27 @@ public class FieldController : MonoBehaviour
     {
         int patternIndex = 0;
 
-        if (fieldSize == 4)
+        if(fieldSize == 3)
+        {
+            patternIndex = (level / patternModsCount) % Patterns.PatternsThreeLettersList.Count;
+            return Patterns.PatternsThreeLettersList[patternIndex];
+        }
+        else if(fieldSize == 4)
         {
             patternIndex = (level / patternModsCount) % Patterns.PatternsFourLettersList.Count;
             return Patterns.PatternsFourLettersList[patternIndex];
         }
 
+        else if (fieldSize == 5)
+        {
+            patternIndex = (level / patternModsCount) % Patterns.PatternsFiveLettersList.Count;
+            return Patterns.PatternsFiveLettersList[patternIndex];
+        }
+
         else
         {
-            patternIndex = (level / patternModsCount) % Patterns.PatternsList.Count;
-            return Patterns.PatternsList[patternIndex];
+            patternIndex = (level / patternModsCount) % Patterns.PatternsSixLettersList.Count;
+            return Patterns.PatternsSixLettersList[patternIndex];
         }
     }
 
@@ -151,7 +156,7 @@ public class FieldController : MonoBehaviour
         selectedWordsList.Clear();
 
         SelectWords();
-        FillPlayingField(fieldSize);
+        FillPlayingField();
     }
 
     //Делаю паттерн туда-сюда 72

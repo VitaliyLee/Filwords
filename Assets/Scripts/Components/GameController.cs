@@ -10,10 +10,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject messagePanel;
 
-    [SerializeField] private FieldController fieldController;
     [SerializeField] private GameObject letterTextObject;
     [SerializeField] private TextMeshProUGUI answerLetters;
     [SerializeField] private List<Color> colorsList;
+
+    private FieldController fieldController;
 
     private List<CardData> selectedCardsList;
     private List<CardData> disableCardsList;
@@ -155,8 +156,7 @@ public class GameController : MonoBehaviour
                 //Вывод сообщения если слово не соответствует паттерну
                 if (fieldLetterPos != selectedCardsList[i].cardIndex)
                 {
-                    //messagePanel.SetActive(true);
-                    Debug.Log("Hueta. Davay po novoy.");
+                    messagePanel.SetActive(true);
                     for (int j = 0; j < selectedCardsList.Count; j++)
                         selectedCardsList[j].image.color = Color.white;
                     return;
@@ -173,8 +173,13 @@ public class GameController : MonoBehaviour
                 selectedCardsList[i].image.color = Color.white;
 
         //Если все слова угаданы
-        if (disableCardsList.Count == (int)Mathf.Pow(fieldController.FieldSize, 2))
+        if (disableCardsList.Count == (int)Mathf.Pow(fieldController.SelectedWordsList.Count, 2))
             winPanel.SetActive(true);
+    }
+
+    public void StartGame(LevelData levelData)
+    {
+        fieldController = new FieldController(levelData.DictionaryName, levelData.Level, levelData.CardsList);
     }
 
     public void NextLevel()
@@ -186,5 +191,14 @@ public class GameController : MonoBehaviour
         currentColorIndex = 0;
 
         fieldController.NewLevel();
+    }
+
+    public void BackFromLevel()
+    {
+        for (int i = 0; i < disableCardsList.Count; i++)
+            disableCardsList[i].image.color = Color.white;
+        disableCardsList.Clear();
+
+        currentColorIndex = 0;
     }
 }

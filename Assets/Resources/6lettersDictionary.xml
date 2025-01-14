@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary>
+  <Node id="0" Text="ИСТИНА"/>
+  <Node id="1" Text="ГРАЦИЯ"/>
+  <Node id="2" Text="ЛАДОНЬ"/>
+  <Node id="3" Text="СКАЗКА"/>
+  <Node id="4" Text="ЧЕПЧИК"/>
+  <Node id="5" Text="ТУАЛЕТ"/>
+  <Node id="6" Text="СПИСОК"/>
+  <Node id="7" Text="ФЛАНГИ"/>
+  <Node id="8" Text="ЛИСИЦА"/>
+  <Node id="9" Text="ПОЛЬЗА"/>
+  <Node id="10" Text="СЕРЬГА"/>
+  <Node id="11" Text="ИМЕНИЕ"/>
+  <Node id="12" Text="ЛИСТЬЯ"/>
+  <Node id="13" Text="КОРОНА"/>
+  <Node id="14" Text="СЮРТУК"/>
+  <Node id="15" Text="УЧЕНИК"/>
+  <Node id="16" Text="ПРАВДА"/>
+  <Node id="17" Text="МАЧИХА"/>
+  <Node id="18" Text="ПРИБОР"/>
+  <Node id="19" Text="СКОБКА"/>
+  <Node id="20" Text="ГОРСТЬ"/>
+  <Node id="21" Text="ВЕРСТА"/>
+  <Node id="22" Text="РАСЧЕТ"/>
+  <Node id="23" Text="ВОЙСКО"/>
+  <Node id="24" Text="ЗВЕЗДА"/>
+  <Node id="25" Text="КРЕМЛЬ"/>
+  <Node id="26" Text="ЗНАНИЕ"/>
+  <Node id="27" Text="ПОЭЗИЯ"/>
+  <Node id="28" Text="БУЛЬОН"/>
+  <Node id="29" Text="ОБЛАКО"/>
+</dictionary>
