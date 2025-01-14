@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -109,25 +110,19 @@ public class GameController : MonoBehaviour
     {
         int row = 0;
         int x, y = 0;
-        Vector2Int fieldLetterPos = new Vector2Int();
-
-        int patternIndex = (fieldController.Level / fieldController.PatternModsCount) % Patterns.PatternsList.Count;
         int patternModIndex = fieldController.Level % fieldController.PatternModsCount;
-
-        Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
+        Vector2Int fieldLetterPos = new Vector2Int();
 
         //Проверка правильности слова и его составления
         if (fieldController.SelectedWordsList.Contains(currentWord))
         {
             row = fieldController.SelectedWordsList.FindIndex(row => row.Contains(currentWord));//Находим индекс слова, тк позиция всех букв слова является СТРОКОЙ матрицы
-
+            
             //Проверка на тоЮ что слово составлено из нужных ячеек
             for (int i = 0; i < selectedCardsList.Count; i++)
             {
-                x = currentMatrix[row, i].x;
-                y = currentMatrix[row, i].y;
-
-                fieldLetterPos.x = y; fieldLetterPos.y = selectedCardsList.Count - x - 1;
+                x = fieldController.CurrentMatrix[row, i].x;
+                y = fieldController.CurrentMatrix[row, i].y;
 
                 switch (patternModIndex)
                 {
@@ -157,10 +152,11 @@ public class GameController : MonoBehaviour
                         break;
                 }
 
-                //Debug.Log($"Index: {i} ::: {fieldController.cm[y, selectedCardsList.Count - x - 1]} ::::: {selectedCardsList[i].cardIndex}");
+                //Вывод сообщения если слово не соответствует паттерну
                 if (fieldLetterPos != selectedCardsList[i].cardIndex)
                 {
-                    messagePanel.SetActive(true);
+                    //messagePanel.SetActive(true);
+                    Debug.Log("Hueta. Davay po novoy.");
                     for (int j = 0; j < selectedCardsList.Count; j++)
                         selectedCardsList[j].image.color = Color.white;
                     return;
@@ -177,7 +173,7 @@ public class GameController : MonoBehaviour
                 selectedCardsList[i].image.color = Color.white;
 
         //Если все слова угаданы
-        if (disableCardsList.Count == fieldController.FieldSize * fieldController.FieldSize)
+        if (disableCardsList.Count == (int)Mathf.Pow(fieldController.FieldSize, 2))
             winPanel.SetActive(true);
     }
 

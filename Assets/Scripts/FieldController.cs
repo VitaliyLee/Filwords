@@ -11,16 +11,15 @@ public class FieldController : MonoBehaviour
 {
     [SerializeField] private int level;//На релизе поменять на закрытую переменую. Она будет СОХРАНЯТЬСЯ
 
-    [SerializeField] private string xmlFileName; // Имя файла без расширения
-    [SerializeField] private int wordsCount;
-    [SerializeField] private int fieldSize;
-    [SerializeField] private List<CardData> cardsList;
+    private int fieldSize;
 
-    private DictionaryController dictionaryController; //Класс управляющий словарями
+    private List<CardData> cardsList;
     private Dictionary<string, string> dictionary; //Собственно сам словарь
 
     private List<string> selectedWordsList;//Список слов на уровне
     private CardData[,] cardsMatrix;//Нужен что бы из cardsList сделать матрицу для удобства работы
+
+    Vector2Int[,] currentMatrix;
 
     private int patternModsCount = 8; //Колличество модификаторов паттерна
 
@@ -28,12 +27,14 @@ public class FieldController : MonoBehaviour
     public List<string> SelectedWordsList { get => selectedWordsList; }
     public int FieldSize { get => fieldSize; }
     public int PatternModsCount { get => patternModsCount; }
+    public Vector2Int[,] CurrentMatrix { get => currentMatrix; }
+    public List<CardData> CardsList { set => cardsList = value; }
 
-    private void Start()
+    public void Init(string xmlDictionaryName)
     {
+        fieldSize = (int)MathF.Sqrt(cardsList.Count);
         selectedWordsList = new List<string>();
-        dictionaryController = new DictionaryController();
-        dictionary = dictionaryController.GetDictionary(xmlFileName);
+        dictionary = new DictionaryController().GetDictionary(xmlDictionaryName);
 
         InitializeCardsMatrix(fieldSize);
         SelectWords();
@@ -63,14 +64,15 @@ public class FieldController : MonoBehaviour
     //Выбирает слова для уровня
     private void SelectWords()
     {
-        int wordIndex = level * fieldSize + 1;
+        if (level > dictionary.Count - 1) level = 0;
+
+        int wordIndex = level * fieldSize;
         string word = "";
 
         //Выбираем слова из списка так, что бы все 5 были уникальными
-        while (selectedWordsList.Count < wordsCount)
+        while (selectedWordsList.Count < fieldSize)
         {
-            //wordIndex = Random.Range(0, dictionary.Count);
-            word = dictionaryController.GetTextById(wordIndex.ToString());
+            dictionary.TryGetValue(wordIndex.ToString(), out word);
 
             //Продолжаем цикл, если в списке уже есть такое слово
             if (!selectedWordsList.Contains(word))
@@ -83,13 +85,9 @@ public class FieldController : MonoBehaviour
     //Пока просто перебиваем матрицу с буквами в карточки
     private void FillPlayingField(int fieldScale)
     {
-        //Колличество модификаторов паттернов = 8
-        int x, y = 0;
-
-        int patternIndex = (level / patternModsCount) % Patterns.PatternsList.Count;
+        currentMatrix = GetFieldMatrix();
         int patternModIndex = level % patternModsCount;
-
-        Vector2Int[,] currentMatrix = Patterns.PatternsList[patternIndex];
+        int x, y = 0;
 
         for (int i = 0; i < fieldScale; i++)
         {
@@ -127,6 +125,23 @@ public class FieldController : MonoBehaviour
                 }
             }
             Debug.Log(selectedWordsList[i]);
+        }
+    }
+
+    private Vector2Int[,] GetFieldMatrix()
+    {
+        int patternIndex = 0;
+
+        if (fieldSize == 4)
+        {
+            patternIndex = (level / patternModsCount) % Patterns.PatternsFourLettersList.Count;
+            return Patterns.PatternsFourLettersList[patternIndex];
+        }
+
+        else
+        {
+            patternIndex = (level / patternModsCount) % Patterns.PatternsList.Count;
+            return Patterns.PatternsList[patternIndex];
         }
     }
 
