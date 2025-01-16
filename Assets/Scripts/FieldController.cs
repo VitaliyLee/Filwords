@@ -18,6 +18,7 @@ public class FieldController
 
     public int Level { get => level; }
     public List<string> SelectedWordsList { get => selectedWordsList; }
+    public List<CardData> CardsList { get => cardsList; }
 
     public Vector2Int[,] CurrentMatrix { get => currentMatrix; }
     public int PatternModsCount { get => patternModsCount; }
@@ -117,6 +118,10 @@ public class FieldController
                         cardsMatrix[fieldSize - x - 1, y].textLetter.text = selectedWordsList[i][j].ToString();
                         break;
                 }
+
+                cardsMatrix[i, j].textLetter.color = cardsMatrix[i, j].defoultColor;
+
+                cardsMatrix[i, j].isHint = false;
             }
             Debug.Log(selectedWordsList[i]);
         }

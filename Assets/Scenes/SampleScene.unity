@@ -795,6 +795,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1893246377}
   image: {fileID: 33572676}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &48720465
 GameObject:
@@ -1066,6 +1069,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 761377971}
   image: {fileID: 79746054}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &92731145
 GameObject:
@@ -1101,6 +1107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 462453475}
   image: {fileID: 92731147}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &92731147
 MonoBehaviour:
@@ -1238,6 +1247,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 192120739}
   image: {fileID: 98586130}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &98586130
 MonoBehaviour:
@@ -1395,6 +1407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 14092912}
   image: {fileID: 108013239}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &108013238
 MonoBehaviour:
@@ -1609,6 +1624,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1424675493}
   image: {fileID: 137625884}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &137625883
 MonoBehaviour:
@@ -1828,6 +1846,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1679130167}
   image: {fileID: 150295666}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &169680813
 GameObject:
@@ -1965,6 +1986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 702371636}
   image: {fileID: 169680816}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &172395036
 GameObject:
@@ -2154,6 +2178,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 465008234}
   image: {fileID: 178068371}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &178068370
 MonoBehaviour:
@@ -2641,6 +2668,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 577104722}
   image: {fileID: 204950745}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &207136132
 GameObject:
@@ -3180,6 +3210,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 887493680}
   image: {fileID: 234229191}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &246264446
 GameObject:
@@ -3451,6 +3484,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 853590255}
   image: {fileID: 256205659}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &262260410
 GameObject:
@@ -3722,6 +3758,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 279901702}
   image: {fileID: 269779234}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &279901700
 GameObject:
@@ -3911,6 +3950,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1217756000}
   image: {fileID: 282792907}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &282792906
 MonoBehaviour:
@@ -3993,6 +4035,139 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282792902}
+  m_CullTransparentMesh: 1
+--- !u!1 &291223914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291223915}
+  - component: {fileID: 291223918}
+  - component: {fileID: 291223917}
+  - component: {fileID: 291223916}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &291223915
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291223914}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.2097, y: 3.2097, z: 3.2097}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 481876778}
+  m_Father: {fileID: 1923159150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -720}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &291223916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291223914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 291223917}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 730978124}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: GetHint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &291223917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291223914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &291223918
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291223914}
   m_CullTransparentMesh: 1
 --- !u!1 &322781948
 GameObject:
@@ -4264,6 +4439,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 814975968}
   image: {fileID: 342389050}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &359073785
 GameObject:
@@ -4721,6 +4899,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 262260412}
   image: {fileID: 400147684}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &400147683
 MonoBehaviour:
@@ -4940,6 +5121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 793109336}
   image: {fileID: 413272059}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &426584941
 GameObject:
@@ -4995,6 +5179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1292654189}
   image: {fileID: 426584945}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 1
   cardIndex: {x: 0, y: 0}
 --- !u!114 &426584944
 MonoBehaviour:
@@ -5266,6 +5453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1545870974}
   image: {fileID: 441242475}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &441242474
 MonoBehaviour:
@@ -5616,6 +5806,140 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465008232}
+  m_CullTransparentMesh: 1
+--- !u!1 &481876777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 481876778}
+  - component: {fileID: 481876780}
+  - component: {fileID: 481876779}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &481876778
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481876777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 291223915}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &481876779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481876777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Button
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &481876780
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481876777}
   m_CullTransparentMesh: 1
 --- !u!1 &482883372
 GameObject:
@@ -6230,6 +6554,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 914717196}
   image: {fileID: 512878969}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &512878968
 MonoBehaviour:
@@ -6449,6 +6776,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1019458159}
   image: {fileID: 513200217}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &519420028
 GameObject:
@@ -6596,6 +6926,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1185771358}
   image: {fileID: 520860783}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &520860782
 MonoBehaviour:
@@ -7271,6 +7604,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 3921795}
   image: {fileID: 586521867}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &586521867
 MonoBehaviour:
@@ -7510,6 +7846,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1493551973}
   image: {fileID: 588706951}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &591327590
 GameObject:
@@ -7565,6 +7904,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 625856339}
   image: {fileID: 591327594}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &591327593
 MonoBehaviour:
@@ -8186,6 +8528,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1267533257}
   image: {fileID: 636390022}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &650817811
 GameObject:
@@ -8591,6 +8936,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1389795676}
   image: {fileID: 692123544}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &693433838
 GameObject:
@@ -8646,6 +8994,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1958214401}
   image: {fileID: 693433843}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &693433842
 MonoBehaviour:
@@ -8783,8 +9134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageTextField: {fileID: 221035366}
-  messageText: "\u041D\u0438\u0444\u0438\u0433\u0430. \u0414\u0430\u0432\u0430\u0439
-    \u043F\u043E \u043D\u043E\u0432\u043E\u0439!"
+  messageText: 
 --- !u!114 &697536784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9247,6 +9597,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 48720467}
   image: {fileID: 719003198}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &730978122
 GameObject:
@@ -9258,6 +9611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730978123}
   - component: {fileID: 730978124}
+  - component: {fileID: 730978125}
   m_Layer: 5
   m_Name: '[GAME]'
   m_TagString: Untagged
@@ -9302,10 +9656,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27ff71dc113d654ba3b57e2ce89c253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 730978125}
   winPanel: {fileID: 135107352}
-  messagePanel: {fileID: 697536781}
+  messageController: {fileID: 697536783}
   letterTextObject: {fileID: 1237237948}
   answerLetters: {fileID: 482883374}
+  gameTimeText: {fileID: 1571762453}
+  colorHint: {r: 0, g: 0, b: 0, a: 0}
   colorsList:
   - {r: 0, g: 0.3443396, b: 0.3443396, a: 1}
   - {r: 0.79607844, g: 0.28773582, b: 0.28773582, a: 1}
@@ -9313,6 +9670,20 @@ MonoBehaviour:
   - {r: 1, g: 0.8982618, b: 0.24056602, a: 1}
   - {r: 1, g: 0.25, b: 0.62271225, a: 1}
   - {r: 0.25098038, g: 1, b: 0.7015782, a: 1}
+--- !u!114 &730978125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730978122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5384a15d40c73aa4c94dcbed835c87c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 1674955004}
 --- !u!1 &749555831
 GameObject:
   m_ObjectHideFlags: 0
@@ -9367,6 +9738,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1534174173}
   image: {fileID: 749555835}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &749555834
 MonoBehaviour:
@@ -9618,6 +9992,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1889531883}
   image: {fileID: 756259666}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &756259666
 MonoBehaviour:
@@ -9909,6 +10286,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1144329371}
   image: {fileID: 766491085}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &766491084
 MonoBehaviour:
@@ -10046,6 +10426,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 564042718}
   image: {fileID: 775171906}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &775171905
 MonoBehaviour:
@@ -10565,6 +10948,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1510730054}
   image: {fileID: 817082150}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &817082150
 MonoBehaviour:
@@ -10991,6 +11377,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 962076808}
   image: {fileID: 835550613}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &841091745
 GameObject:
@@ -11128,6 +11517,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1239481740}
   image: {fileID: 841091748}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &843965338
 GameObject:
@@ -11598,6 +11990,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 172395038}
   image: {fileID: 877354395}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &877354394
 MonoBehaviour:
@@ -11817,6 +12212,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 750365271}
   image: {fileID: 879137357}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &881630007
 GameObject:
@@ -12140,6 +12538,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 656069816}
   image: {fileID: 887983986}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &887983985
 MonoBehaviour:
@@ -12277,6 +12678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1690918230}
   image: {fileID: 888723969}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &888723968
 MonoBehaviour:
@@ -12496,6 +12900,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1559072178}
   image: {fileID: 895167205}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &896263999
 GameObject:
@@ -12531,6 +12938,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 224199259}
   image: {fileID: 896264001}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &896264001
 MonoBehaviour:
@@ -12853,6 +13263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 950547086}
   image: {fileID: 912083959}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &912083958
 MonoBehaviour:
@@ -13072,6 +13485,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 881630009}
   image: {fileID: 913187180}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &914487558
 GameObject:
@@ -13209,6 +13625,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 322781950}
   image: {fileID: 914487561}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &914717194
 GameObject:
@@ -13480,6 +13899,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 12863555}
   image: {fileID: 916714870}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &930648773
 GameObject:
@@ -14021,6 +14443,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1527097115}
   image: {fileID: 956771238}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &962076806
 GameObject:
@@ -14210,6 +14635,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 499137524}
   image: {fileID: 962312108}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &962312107
 MonoBehaviour:
@@ -14481,6 +14909,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 999046885}
   image: {fileID: 991753421}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &991753420
 MonoBehaviour:
@@ -14834,6 +15265,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1023397747}
   image: {fileID: 1007943181}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1019458157
 GameObject:
@@ -15157,6 +15591,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1524477446}
   image: {fileID: 1041622488}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1041622487
 MonoBehaviour:
@@ -15274,6 +15711,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1496744928}
   image: {fileID: 1059156779}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1059156779
 MonoBehaviour:
@@ -15601,6 +16041,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 807150609}
   image: {fileID: 1113140430}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1113140429
 MonoBehaviour:
@@ -15738,6 +16181,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1909813663}
   image: {fileID: 1120141245}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1120141244
 MonoBehaviour:
@@ -15855,6 +16301,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 952711373}
   image: {fileID: 1121933878}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1121933878
 MonoBehaviour:
@@ -16146,6 +16595,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 200672491}
   image: {fileID: 1132163959}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1132163958
 MonoBehaviour:
@@ -16365,6 +16817,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1726730336}
   image: {fileID: 1142929091}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1144329369
 GameObject:
@@ -16770,6 +17225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1145968998}
   image: {fileID: 1182633284}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1185771356
 GameObject:
@@ -17093,6 +17551,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 703703636}
   image: {fileID: 1194915100}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1194915099
 MonoBehaviour:
@@ -17312,6 +17773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1191586271}
   image: {fileID: 1197234352}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1199325240
 GameObject:
@@ -17717,6 +18181,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1576179410}
   image: {fileID: 1230306113}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1232591761
 GameObject:
@@ -18665,6 +19132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 437227779}
   image: {fileID: 1295624897}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1298003498
 GameObject:
@@ -18700,6 +19170,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 650817812}
   image: {fileID: 1298003500}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1298003500
 MonoBehaviour:
@@ -18857,6 +19330,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1603361700}
   image: {fileID: 1314575218}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1314575217
 MonoBehaviour:
@@ -18994,6 +19470,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 246264448}
   image: {fileID: 1380695516}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1380695515
 MonoBehaviour:
@@ -19265,6 +19744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 375831418}
   image: {fileID: 1410135359}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1410135358
 MonoBehaviour:
@@ -19484,6 +19966,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1423033632}
   image: {fileID: 1411774735}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1423033630
 GameObject:
@@ -19787,6 +20272,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1938826644}
   image: {fileID: 1428872516}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1428872516
 MonoBehaviour:
@@ -20089,6 +20577,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 979952242}
   image: {fileID: 1481361365}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1481361364
 MonoBehaviour:
@@ -20226,6 +20717,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 618718556}
   image: {fileID: 1481366862}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1481366861
 MonoBehaviour:
@@ -20847,6 +21341,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 498914575}
   image: {fileID: 1520356029}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1524477444
 GameObject:
@@ -21384,6 +21881,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545870972}
   m_CullTransparentMesh: 1
+--- !u!1 &1548994446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548994447}
+  - component: {fileID: 1548994449}
+  - component: {fileID: 1548994448}
+  m_Layer: 5
+  m_Name: 'Score:'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1548994447
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548994446}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1923159150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 912}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1548994448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548994446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Score:'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1548994449
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548994446}
+  m_CullTransparentMesh: 1
 --- !u!1 &1559072176
 GameObject:
   m_ObjectHideFlags: 0
@@ -21654,6 +22285,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1890785806}
   image: {fileID: 1564902191}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1568074390
 GameObject:
@@ -21788,6 +22422,140 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1571762452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571762455}
+  - component: {fileID: 1571762454}
+  - component: {fileID: 1571762453}
+  m_Layer: 5
+  m_Name: Time
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1571762453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571762452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 00:00
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4284769535
+  m_fontColor: {r: 1, g: 0.3915094, b: 0.3915094, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1571762454
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571762452}
+  m_CullTransparentMesh: 1
+--- !u!224 &1571762455
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571762452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.5809, y: 3.5809, z: 3.5809}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1923159150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 672}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1576179408
 GameObject:
@@ -22327,6 +23095,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 865340905}
   image: {fileID: 1660892039}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1672780624
 GameObject:
@@ -22462,6 +23233,140 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1674955002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674955003}
+  - component: {fileID: 1674955005}
+  - component: {fileID: 1674955004}
+  m_Layer: 5
+  m_Name: ScoreTxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1674955003
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674955002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1923159150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 192, y: 912}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1674955004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674955002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 00000
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1674955005
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674955002}
+  m_CullTransparentMesh: 1
 --- !u!1 &1679130165
 GameObject:
   m_ObjectHideFlags: 0
@@ -22630,6 +23535,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1672780625}
   image: {fileID: 1688459770}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1688459770
 MonoBehaviour:
@@ -23003,6 +23911,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1073220818}
   image: {fileID: 1703135059}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1726730334
 GameObject:
@@ -23192,6 +24103,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 207136134}
   image: {fileID: 1759173932}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1759173931
 MonoBehaviour:
@@ -23309,6 +24223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1568074391}
   image: {fileID: 1778016812}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1778016812
 MonoBehaviour:
@@ -23548,6 +24465,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1199325242}
   image: {fileID: 1805355386}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1816213533
 GameObject:
@@ -23816,6 +24736,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 624002726}
   image: {fileID: 1861830866}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1861830865
 MonoBehaviour:
@@ -24571,6 +25494,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1265730749}
   image: {fileID: 1921060125}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!1 &1923159146
 GameObject:
@@ -24667,9 +25593,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 730978123}
+  - {fileID: 1571762455}
+  - {fileID: 291223915}
   - {fileID: 1237237949}
   - {fileID: 135107353}
   - {fileID: 1096394670}
+  - {fileID: 1548994447}
+  - {fileID: 1674955003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -24731,6 +25661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 2084690789}
   image: {fileID: 1929596438}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1929596437
 MonoBehaviour:
@@ -24848,6 +25781,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1123182797}
   image: {fileID: 1930080987}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1930080987
 MonoBehaviour:
@@ -25321,6 +26257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1999527811}
   image: {fileID: 1953320170}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &1953320170
 MonoBehaviour:
@@ -26285,6 +27224,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 19772303}
   image: {fileID: 2091080284}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &2091080284
 MonoBehaviour:
@@ -26422,6 +27364,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 2067664269}
   image: {fileID: 2101528545}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &2101528545
 MonoBehaviour:
@@ -26751,6 +27696,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textLetter: {fileID: 1643399330}
   image: {fileID: 2145407613}
+  defoultColor: {r: 0, g: 0, b: 0, a: 1}
+  hintColor: {r: 1, g: 0, b: 0, a: 1}
+  isHint: 0
   cardIndex: {x: 0, y: 0}
 --- !u!114 &2145407613
 MonoBehaviour:

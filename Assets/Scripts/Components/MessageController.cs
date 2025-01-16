@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class MessageController : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI messageTextField;
-    [SerializeField] string messageText;
+    [SerializeField] private TextMeshProUGUI messageTextField;
+    [SerializeField] private string messageText;
+
+    public string MessageText { set => messageText = value; }
 
     public void MessageInit()
     {

@@ -8,6 +8,9 @@ public class CardData : MonoBehaviour
 {
     public TextMeshProUGUI textLetter;
     public Image image;
+    public Color defoultColor = Color.black;
+    public Color hintColor = Color.red;
+    public bool isHint = false;
 
     [HideInInspector]
     public Vector2Int cardIndex;
