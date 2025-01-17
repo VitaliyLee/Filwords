@@ -50,11 +50,14 @@ public class GameController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            CheckCorrectnessWord();
+            if(fieldController != null)
+            {
+                CheckCorrectnessWord();
 
-            currentWord = "";
-            isDragging = false;
-            selectedCardsList.Clear();
+                currentWord = "";
+                isDragging = false;
+                selectedCardsList.Clear();
+            }
         }
         
         if (isDragging)
@@ -290,6 +293,8 @@ public class GameController : MonoBehaviour
             disableCardsList[i].image.color = Color.white;
         disableCardsList.Clear();
         hintWordIndexList.Clear();
+
+        fieldController = null;
 
         currentColorIndex = 0;
     }
