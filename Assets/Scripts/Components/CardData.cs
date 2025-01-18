@@ -15,6 +15,7 @@ public class CardData : MonoBehaviour
     [HideInInspector]
     public Vector2Int cardIndex;
 
+    //Вычисляет является ли выбранная клетка соседней к предыдущей
     public bool IsNeighbour(Vector2Int NeighbourIndex)
     {
         Vector2Int resultVector = NeighbourIndex - cardIndex;

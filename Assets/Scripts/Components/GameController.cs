@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -31,7 +32,6 @@ public class GameController : MonoBehaviour
     private List<int> hintWordIndexList;
 
     private float gameTime;
-    private int minutes, seconds;
 
     private void Start()
     {
@@ -61,55 +61,68 @@ public class GameController : MonoBehaviour
         }
         
         if (isDragging)
-            IsPointerOverUIObject();
+            SelectCard();
 
         SetAnswerLetters();
-        Timer();
+        TimeCounter();
     }
 
-    private bool IsPointerOverUIObject()
+    private CardData IsPointerOverUIObject()
     {
+        CardData cardController;
         // Получаем текущую позицию курсора
-        PointerEventData pointerData = new PointerEventData(EventSystem.current)
-        {
-            position = Input.mousePosition
-        };
-
-        // Список для хранения результатов
-        var results = new List<RaycastResult>();
+        PointerEventData pointerData = new PointerEventData(EventSystem.current){ position = Input.mousePosition };
 
         // Выполняем рейкаст
+        var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointerData, results);
 
         // Проверяем, есть ли наш целевой Button среди результатов
         foreach (RaycastResult result in results)
         {
-            CardData cardController = result.gameObject.GetComponent<CardData>();//Тут желательно тоже выбрать ДРУГОЕ решение, но пока пусть так
+            cardController = result.gameObject.GetComponent<CardData>();//Тут желательно тоже выбрать ДРУГОЕ решение, но пока пусть так
 
-            if (!disableCardsList.Contains(cardController) && !selectedCardsList.Contains(cardController) && cardController != null)//disableCardsList - список не доступных ячеек (например потому что слова из них уже составлены)
-            {
-                if (selectedCardsList.Count > 0 && !cardController.IsNeighbour(selectedCardsList[selectedCardsList.Count - 1].cardIndex))//IsNeighbour проверяет является ли выбранная ячейка соседом последней ячейки из списка выделенных
-                    return false;
-
-                selectedCardsList.Add(cardController);//Добавляет в список выделенных объектов
-                cardController.image.color = colorsList[currentColorIndex];//Красит выбранный объект
-                cardController.textLetter.color = Color.white;
-                currentWord += cardController.textLetter.text;//Добавляет выбранную букву к результирубщему слову
-
-                return true;
-            }
-
-            //Проверка на "обратный ход". Если вести курсор обратно по слову, то ячейки перестают выделяться, дропаются из списка выбранных и из результирубщего слова
-            if (selectedCardsList.Count > 1 && selectedCardsList[selectedCardsList.Count - 2] == cardController)
-            {
-                selectedCardsList[selectedCardsList.Count - 1].image.color = Color.white;
-                selectedCardsList[selectedCardsList.Count - 1].textLetter.color = selectedCardsList[selectedCardsList.Count - 1].defoultColor;
-                selectedCardsList.Remove(selectedCardsList[selectedCardsList.Count - 1]);
-                currentWord = currentWord.Remove(currentWord.Length - 1);
-            }
+            if(cardController is CardData)
+                return cardController;
         }
 
-        return false;
+        return null;
+    }
+
+    private void SelectCard()
+    {
+        CardData cardController = IsPointerOverUIObject();
+
+        if (!disableCardsList.Contains(cardController) && !selectedCardsList.Contains(cardController) && cardController != null)//disableCardsList - список не доступных ячеек (например потому что слова из них уже составлены)
+        {
+            if (selectedCardsList.Count > 0 && !cardController.IsNeighbour(selectedCardsList[selectedCardsList.Count - 1].cardIndex))//IsNeighbour проверяет является ли выбранная ячейка соседом последней ячейки из списка выделенных
+                return;
+
+            selectedCardsList.Add(cardController);//Добавляет в список выделенных объектов
+            cardController.image.color = colorsList[currentColorIndex];//Красит выбранный объект
+            cardController.textLetter.color = Color.white;
+            currentWord += cardController.textLetter.text;//Добавляет выбранную букву к результирубщему слову
+        }
+
+        //Проверка на "обратный ход". Если вести курсор обратно по слову, то ячейки перестают выделяться, дропаются из списка выбранных и из результирубщего слова
+        if (selectedCardsList.Count > 1 && selectedCardsList[selectedCardsList.Count - 2] == cardController)
+        {
+            CardResetSettings(selectedCardsList.Count - 1);
+
+            selectedCardsList.Remove(selectedCardsList[selectedCardsList.Count - 1]);
+            currentWord = currentWord.Remove(currentWord.Length - 1);
+        }
+    }
+
+    //Возвращает настройки карточки к изначальным
+    private void CardResetSettings(int CardIndex)
+    {
+        if (selectedCardsList[CardIndex].isHint)
+            selectedCardsList[CardIndex].textLetter.color = selectedCardsList[CardIndex].hintColor;
+        else
+            selectedCardsList[CardIndex].textLetter.color = selectedCardsList[CardIndex].defoultColor;
+
+        selectedCardsList[CardIndex].image.color = Color.white;
     }
 
     private void SetAnswerLetters()
@@ -142,14 +155,7 @@ public class GameController : MonoBehaviour
                     messageController.gameObject.SetActive(true);
 
                     for (int j = 0; j < selectedCardsList.Count; j++)
-                    {
-                        if (selectedCardsList[j].isHint)
-                            selectedCardsList[j].textLetter.color = selectedCardsList[j].hintColor;
-                        else
-                            selectedCardsList[j].textLetter.color = selectedCardsList[j].defoultColor;
-
-                        selectedCardsList[j].image.color = Color.white;
-                    }
+                        CardResetSettings(j);
                     return;
                 }
             }
@@ -163,14 +169,7 @@ public class GameController : MonoBehaviour
         
         else
             for (int i = 0; i < selectedCardsList.Count; i++)
-            {
-                if(selectedCardsList[i].isHint)
-                    selectedCardsList[i].textLetter.color = selectedCardsList[i].hintColor;
-                else
-                    selectedCardsList[i].textLetter.color = selectedCardsList[i].defoultColor;
-
-                selectedCardsList[i].image.color = Color.white;
-            }
+                CardResetSettings(i);
 
         //Если все слова угаданы
         if (disableCardsList.Count == (int)Mathf.Pow(fieldController.SelectedWordsList.Count, 2))
@@ -180,7 +179,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void Timer()
+    private void TimeCounter()
     {
         gameTime += Time.deltaTime;
         int min = (int)(gameTime / 60);
@@ -237,6 +236,17 @@ public class GameController : MonoBehaviour
         return fieldLetterPos;
     }
 
+    private void ClearLevel()
+    {
+        for (int i = 0; i < disableCardsList.Count; i++)
+            disableCardsList[i].image.color = Color.white;
+
+        disableCardsList.Clear();
+        hintWordIndexList.Clear();
+
+        currentColorIndex = 0;
+    }
+
     public void StartGame(LevelData levelData)
     {
         fieldController = new FieldController(levelData.DictionaryName, levelData.Level, levelData.CardsList);
@@ -273,29 +283,18 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
-        for (int i = 0; i < disableCardsList.Count; i++)
-            disableCardsList[i].image.color = Color.white;
-        disableCardsList.Clear();
+        ClearLevel();
 
-        hintWordIndexList.Clear();
         for (int i = 0; i < fieldController.SelectedWordsList.Count; i++)
             hintWordIndexList.Add(i);
 
-        currentColorIndex = 0;
         gameTime = 0;
-
         fieldController.NewLevel();
     }
 
     public void BackFromLevel()
     {
-        for (int i = 0; i < disableCardsList.Count; i++)
-            disableCardsList[i].image.color = Color.white;
-        disableCardsList.Clear();
-        hintWordIndexList.Clear();
-
+        ClearLevel();
         fieldController = null;
-
-        currentColorIndex = 0;
     }
 }
