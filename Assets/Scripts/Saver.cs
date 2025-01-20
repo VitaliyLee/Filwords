@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public static class Saver
 {
@@ -8,8 +9,8 @@ public static class Saver
     public static int LevelNormal { get; private set; }
     public static int LevelVeteran { get; private set; }
     public static int LevelProfessionsl { get; private set; }
-
     public static int Score { get; private set; }
+    public static string AchieveKeysString { get; private set; }
 
     public static void SaveValue(string Key, int Value)
     {
@@ -51,13 +52,20 @@ public static class Saver
         Score = ScoreValue;
     }
 
+    public static void SaveAchieve(string Key)
+    {
+        if(!AchieveKeysString.Contains(Key))
+            AchieveKeysString += $",{Key}";
+    }
+
     public static void Load()
     {
         LevelNoob = 0;
-        LevelNormal = 1;
-        LevelVeteran = 2;
-        LevelProfessionsl = 3;
-
+        LevelNormal = 0;
+        LevelVeteran = 0;
+        LevelProfessionsl = 0;
         Score = 100;
+
+        AchieveKeysString = "1";
     }
 }

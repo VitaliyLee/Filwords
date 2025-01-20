@@ -11,7 +11,9 @@ using UnityEngine.EventSystems;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Player player;
+    [SerializeField] private AchievementSystem achievementSystem;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject difficultyLevelComplited;
     [SerializeField] private MessageController messageController;
 
     [SerializeField] private GameObject letterTextObject;
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
         Saver.Load();//«агружает данные игрока с сервера
         player.SetGuessedWords();//«адает колличсетво угаданных слов на каждый уровень
         player.AddScore(Saver.Score);
+        achievementSystem.UpdateAchievement();
     }
 
     void Update()
@@ -178,8 +181,22 @@ public class GameController : MonoBehaviour
         //≈сли все слова угаданы
         if (disableCardsList.Count == (int)Mathf.Pow(fieldController.SelectedWordsList.Count, 2))
         {
+            fieldController.RaiseLevel(1);//1 - потому что уровни прибавл€ютс€ по одному
+
+            if (fieldController.CheckLevelsComplete())
+            {
+                difficultyLevelComplited.SetActive(true);
+                player.AddScoreForAnswer(disableCardsList.Count, (int)(gameTime / 60));
+                achievementSystem.CheckAchievement(disableCardsList.Count, fieldController.Level, gameTime);
+
+                SaveLevelData();
+
+                return;
+            }
+
             winPanel.SetActive(true);
             player.AddScoreForAnswer(disableCardsList.Count, (int)(gameTime / 60));
+            achievementSystem.CheckAchievement(disableCardsList.Count, fieldController.Level, gameTime);
         }
     }
 
@@ -251,9 +268,36 @@ public class GameController : MonoBehaviour
         currentColorIndex = 0;
     }
 
+    private void SaveLevelData()
+    {
+        //ћожет быть помен€ю на другое, но вроде и так норм. коротко и пон€тно.
+        switch (fieldController.CardsList.Count)
+        {
+            case 9:
+                Saver.SaveWithScore("LevelNoob", fieldController.Level, player.Score);
+                break;
+            case 16:
+                Saver.SaveWithScore("LevelNormal", fieldController.Level, player.Score);
+                break;
+            case 25:
+                Saver.SaveWithScore("LevelVeteran", fieldController.Level, player.Score);
+                break;
+            case 36:
+                Saver.SaveWithScore("LevelProfessionsl", fieldController.Level, player.Score);
+                break;
+        }
+    }
+
     public void StartGame(LevelData levelData)
     {
         fieldController = new FieldController(levelData.DictionaryName, levelData.Level, levelData.CardsList);
+
+        if (fieldController.CheckLevelsComplete())
+        {
+            difficultyLevelComplited.SetActive(true);
+
+            return;
+        }
 
         for (int i = 0; i < fieldController.SelectedWordsList.Count; i++)
             hintWordIndexList.Add(i);
@@ -287,29 +331,13 @@ public class GameController : MonoBehaviour
     {
         ClearLevel();
 
-        for (int i = 0; i < fieldController.SelectedWordsList.Count; i++)
-            hintWordIndexList.Add(i);
-
         gameTime = 0;
         fieldController.NewLevel();
 
-        //ћожет быть помен€ю на другое, но вроде и так норм. коротко и пон€тно.
-        switch (fieldController.CardsList.Count)
-        {
-            case 9:
-                Saver.SaveWithScore("LevelNoob", fieldController.Level, player.Score);
-                break;
-            case 16:
-                Saver.SaveWithScore("LevelNormal", fieldController.Level, player.Score);
-                break;
-            case 25:
-                Saver.SaveWithScore("LevelVeteran", fieldController.Level, player.Score);
-                break;
-            case 36:
-                Saver.SaveWithScore("LevelProfessionsl", fieldController.Level, player.Score);
-                break;
-        }
+        for (int i = 0; i < fieldController.SelectedWordsList.Count; i++)
+            hintWordIndexList.Add(i);
 
+        SaveLevelData();
         player.SetGuessedWords();
     }
 

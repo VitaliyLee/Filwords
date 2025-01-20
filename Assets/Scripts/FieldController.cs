@@ -25,16 +25,19 @@ public class FieldController
 
     public FieldController(string xmlDictionaryName, int SaveLevel, List<CardData> CardsDataList)
     {
-        Debug.Log(SaveLevel);
         level = SaveLevel;
         cardsList = CardsDataList;
         fieldSize = (int)MathF.Sqrt(cardsList.Count);
+
         selectedWordsList = new List<string>();
         dictionary = new DictionaryController().GetDictionary(xmlDictionaryName);
 
-        InitializeCardsMatrix(fieldSize);
-        SelectWords();
-        FillPlayingField();
+        if (level * fieldSize < dictionary.Count)
+        {
+            InitializeCardsMatrix(fieldSize);
+            SelectWords();
+            FillPlayingField();
+        }
     }
 
     //Что бы удобнее было работать с карточками букв, запихиваем их в матрицу
@@ -60,12 +63,9 @@ public class FieldController
     //Выбирает слова для уровня
     private void SelectWords()
     {
-        if (level > dictionary.Count - 1)
-        {
-            Debug.Log("Вы прошли этот уровень сложности!");
+        if (level * fieldSize >= dictionary.Count)
             return;
-        }
-
+        
         int wordIndex = level * fieldSize;
         string word = "";
 
@@ -161,13 +161,28 @@ public class FieldController
         }
     }
 
+    public bool CheckLevelsComplete()
+    {
+        Debug.Log($"Level: {level * fieldSize}, DictCount: {dictionary.Count}");
+        if (level * fieldSize >= dictionary.Count)
+            return true;
+
+        else
+            return false;
+    }
+
+    public void RaiseLevel(int Value)
+    {
+        level += Value;
+    }
+
     public void NewLevel()
     {
-        level++;
         selectedWordsList.Clear();
 
         SelectWords();
         FillPlayingField();
+
     }
 
     //Делаю паттерн туда-сюда 72
