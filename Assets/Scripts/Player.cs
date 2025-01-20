@@ -5,8 +5,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int score;
-    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+    [Space(10)]
+    [SerializeField] private TextMeshProUGUI noobGuessedWords;
+    [SerializeField] private TextMeshProUGUI normalGuessedWords;
+    [SerializeField] private TextMeshProUGUI veteranGuessedWords;
+    [SerializeField] private TextMeshProUGUI professionalGuessedWords;
+
+    private int score;
+
+    public int Score { get => score; }
 
     public void AddScore(int Score)
     {
@@ -23,18 +32,12 @@ public class Player : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    public void SubtractScore(int value)
+    public void SetGuessedWords()
     {
-        if(score < value)
-        {
-            Debug.Log("Show Reworded");
-        }
-
-        else
-        {
-            score -= value;
-        }
-
-        scoreText.text = score.ToString();
+        //3, 4, 5, 6 - соответственно обозначают количество слов на уровне. Их всегда будет столько, но архитектуру я все равно ГАВНО сделал (
+        noobGuessedWords.text = $"{Saver.LevelNoob * 3} из 20";
+        normalGuessedWords.text = $"{Saver.LevelNormal * 4} из 20";
+        veteranGuessedWords.text = $"{Saver.LevelVeteran * 5} из 20";
+        professionalGuessedWords.text = $"{Saver.LevelProfessionsl * 6} из 20";
     }
 }

@@ -11,10 +11,25 @@ public class LevelData : MonoBehaviour
 
     public List<CardData> CardsList { get => cardsList; }
     public string DictionaryName { get => dictionaryName; }
-    public int Level { get => level; }
+    public int Level { get { GetLevel(); return level; } }
 
-    public void SetLevel()
+    private void GetLevel()
     {
-        level = 0;
+        //В качестве ключа передается длина списка т.к. размер игрового поля всегда фиксированый и он ТОЧНО не будет меняться
+        switch(cardsList.Count)
+        {
+            case 9:
+                level = Saver.LevelNoob;
+                break;
+            case 16:
+                level = Saver.LevelNormal;
+                break;
+            case 25:
+                level = Saver.LevelVeteran;
+                break;
+            case 36:
+                level = Saver.LevelProfessionsl;
+                break;
+        }
     }
 }

@@ -39,18 +39,22 @@ public class GameController : MonoBehaviour
         selectedCardsList = new List<CardData>();
         disableCardsList = new List<CardData>();
         hintWordIndexList = new List<int>();
+
+        Saver.Load();//Загружает данные игрока с сервера
+        player.SetGuessedWords();//Задает колличсетво угаданных слов на каждый уровень
+        player.AddScore(Saver.Score);
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(fieldController != null)
         {
-            isDragging = true;
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                isDragging = true;
+            }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            if(fieldController != null)
+            if (Input.GetMouseButtonUp(0))
             {
                 CheckCorrectnessWord();
 
@@ -58,13 +62,13 @@ public class GameController : MonoBehaviour
                 isDragging = false;
                 selectedCardsList.Clear();
             }
-        }
-        
-        if (isDragging)
-            SelectCard();
 
-        SetAnswerLetters();
-        TimeCounter();
+            if (isDragging)
+                SelectCard();
+
+            SetAnswerLetters();
+            TimeCounter();
+        }
     }
 
     private CardData IsPointerOverUIObject()
@@ -277,8 +281,6 @@ public class GameController : MonoBehaviour
                 hintWordIndexList.RemoveAt(0);
             }
         }
-
-        player.SubtractScore(25);
     }
 
     public void NextLevel()
@@ -290,11 +292,32 @@ public class GameController : MonoBehaviour
 
         gameTime = 0;
         fieldController.NewLevel();
+
+        //Может быть поменяю на другое, но вроде и так норм. коротко и понятно.
+        switch (fieldController.CardsList.Count)
+        {
+            case 9:
+                Saver.SaveWithScore("LevelNoob", fieldController.Level, player.Score);
+                break;
+            case 16:
+                Saver.SaveWithScore("LevelNormal", fieldController.Level, player.Score);
+                break;
+            case 25:
+                Saver.SaveWithScore("LevelVeteran", fieldController.Level, player.Score);
+                break;
+            case 36:
+                Saver.SaveWithScore("LevelProfessionsl", fieldController.Level, player.Score);
+                break;
+        }
+
+        player.SetGuessedWords();
     }
 
     public void BackFromLevel()
     {
         ClearLevel();
         fieldController = null;
+
+        player.SetGuessedWords();
     }
 }

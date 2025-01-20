@@ -23,9 +23,10 @@ public class FieldController
     public Vector2Int[,] CurrentMatrix { get => currentMatrix; }
     public int PatternModsCount { get => patternModsCount; }
 
-    public FieldController(string xmlDictionaryName, int Level, List<CardData> CardsDataList)
+    public FieldController(string xmlDictionaryName, int SaveLevel, List<CardData> CardsDataList)
     {
-        level = Level;
+        Debug.Log(SaveLevel);
+        level = SaveLevel;
         cardsList = CardsDataList;
         fieldSize = (int)MathF.Sqrt(cardsList.Count);
         selectedWordsList = new List<string>();
@@ -59,7 +60,11 @@ public class FieldController
     //Выбирает слова для уровня
     private void SelectWords()
     {
-        if (level > dictionary.Count - 1) level = 0;
+        if (level > dictionary.Count - 1)
+        {
+            Debug.Log("Вы прошли этот уровень сложности!");
+            return;
+        }
 
         int wordIndex = level * fieldSize;
         string word = "";
