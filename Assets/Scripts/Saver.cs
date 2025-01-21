@@ -60,11 +60,11 @@ public static class Saver
 
     public static void Load()
     {
-        LevelNoob = 0;
-        LevelNormal = 0;
-        LevelVeteran = 0;
-        LevelProfessionsl = 0;
-        Score = 100;
+        LevelNoob = 1;
+        LevelNormal = 1;
+        LevelVeteran = 1;
+        LevelProfessionsl = 1;
+        Score = 1001;
 
         AchieveKeysString = "1";
     }
