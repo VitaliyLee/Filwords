@@ -5,6 +5,9 @@ using UnityEngine.UIElements;
 
 public static class Saver
 {
+    public delegate void AchieveSaveHendler(string AchieveKey);
+    public static event AchieveSaveHendler AchieveSaveEvent;
+
     public static int LevelNoob { get; private set; }
     public static int LevelNormal { get; private set; }
     public static int LevelVeteran { get; private set; }
@@ -55,7 +58,10 @@ public static class Saver
     public static void SaveAchieve(string Key)
     {
         if(!AchieveKeysString.Contains(Key))
+        {
             AchieveKeysString += $",{Key}";
+            AchieveSaveEvent?.Invoke(Key);
+        }
     }
 
     public static void Load()
