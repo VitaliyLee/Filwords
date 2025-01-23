@@ -129,7 +129,7 @@ public class FieldController
 
                 cardsMatrix[i, j].isHint = false;
             }
-            Debug.Log(selectedWordsList[i]);
+            //Debug.Log(selectedWordsList[i]);
         }
     }
 
@@ -163,7 +163,6 @@ public class FieldController
 
     public bool CheckLevelsComplete()
     {
-        Debug.Log($"Level: {level * fieldSize}, DictCount: {dictionary.Count}");
         if (level * fieldSize >= dictionary.Count)
             return true;
 
