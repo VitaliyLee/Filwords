@@ -1,3 +1,4 @@
+using GamePush;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,11 +33,15 @@ public static class Saver
                 LevelProfessionsl = Value;
                 break;
         }
+
+        GP_Player.Set(Key, Value);
+
+        GP_Player.Sync(storage: SyncStorageType.preffered);
     }
 
     public static void SaveWithScore(string Key, int Value, int ScoreValue)
     {
-        switch(Key)
+        switch (Key)
         {
             case "LevelNoob":
                 LevelNoob = Value;
@@ -53,6 +58,11 @@ public static class Saver
         }
 
         Score = ScoreValue;
+
+        GP_Player.Set(Key, Value);
+        GP_Player.Set("Score", ScoreValue);
+
+        GP_Player.Sync(storage: SyncStorageType.preffered);
     }
 
     public static void SaveAchieve(string Key)
@@ -61,17 +71,20 @@ public static class Saver
         {
             AchieveKeysString += $",{Key}";
             AchieveSaveEvent?.Invoke(Key);
+            GP_Player.Set("AchieveKeysString", AchieveKeysString );
         }
     }
 
     public static void Load()
     {
-        LevelNoob = 1;
-        LevelNormal = 1;
-        LevelVeteran = 1;
-        LevelProfessionsl = 1;
-        Score = 1001;
+        //upgradeSystem.AddMoney(GP_Player.GetFloat("allMoney"));
+        LevelNoob = GP_Player.GetInt("LevelNoob");
+        LevelNormal = GP_Player.GetInt("LevelNormal");
+        LevelVeteran = GP_Player.GetInt("LevelVeteran");
+        LevelProfessionsl = GP_Player.GetInt("LevelProfessionsl");
+        Score = GP_Player.GetInt("Score");
 
-        AchieveKeysString = "1";
+        AchieveKeysString = GP_Player.GetString("AchieveKeysString") ?? "";
     }
+    //Все ключи соответствуют названиям полей этого класса
 }

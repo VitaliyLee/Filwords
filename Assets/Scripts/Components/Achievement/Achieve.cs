@@ -20,6 +20,12 @@ public class Achieve : MonoBehaviour
 
     public void OpenAchieve()
     {
+        Saver.SaveAchieve(AchieveKey);
+        mutePanel.SetActive(false);
+    }
+
+    public void UnmuteAchieve()
+    {
         mutePanel.SetActive(false);
     }
 }

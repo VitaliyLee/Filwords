@@ -1,3 +1,4 @@
+using GamePush;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,12 +8,14 @@ using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private AchievementSystem achievementSystem;
-    [SerializeField] private GameObject winPanel;
+    [SerializeField] private LeaderBoard leaderBoard;
+    [SerializeField] private WinDataController winPanel;
     [SerializeField] private GameObject difficultyLevelComplited;
     [SerializeField] private MessageController messageController;
 
@@ -35,7 +38,11 @@ public class GameController : MonoBehaviour
 
     private float gameTime;
 
-    private void Start()
+    private void OnEnable() => GP_Init.OnReady += StartGame;
+
+    private void OnDisable() => GP_Init.OnReady -= StartGame;
+
+    private void StartGame()
     {
         currentColorIndex = 0;
         selectedCardsList = new List<CardData>();
@@ -46,6 +53,7 @@ public class GameController : MonoBehaviour
         player.SetGuessedWords();//Задает колличсетво угаданных слов на каждый уровень
         player.AddScore(Saver.Score);
         achievementSystem.UpdateAchievement();
+        leaderBoard.Fetch();
     }
 
     void Update()
@@ -152,7 +160,7 @@ public class GameController : MonoBehaviour
         {
             row = fieldController.SelectedWordsList.FindIndex(row => row.Contains(currentWord));//Находим индекс слова, тк позиция всех букв слова является СТРОКОЙ матрицы
             
-            //Проверка на тоЮ что слово составлено из нужных ячеек
+            //Проверка на то что слово составлено из нужных ячеек
             for (int i = 0; i < selectedCardsList.Count; i++)
             {
                 //Вывод сообщения если слово не соответствует паттерну
@@ -185,19 +193,24 @@ public class GameController : MonoBehaviour
 
             if (fieldController.CheckLevelsComplete())
             {
-                difficultyLevelComplited.SetActive(true);
-                player.AddScoreForAnswer(disableCardsList.Count, (int)(gameTime / 60));
-                achievementSystem.CheckAchievement(disableCardsList.Count, fieldController.Level, gameTime);
-
-                SaveLevelData();
-
+                CompleteLevel(difficultyLevelComplited);
                 return;
             }
 
-            winPanel.SetActive(true);
-            player.AddScoreForAnswer(disableCardsList.Count, (int)(gameTime / 60));
-            achievementSystem.CheckAchievement(disableCardsList.Count, fieldController.Level, gameTime);
+            CompleteLevel(winPanel.gameObject);
         }
+    }
+
+    private void CompleteLevel(GameObject WinPanel)
+    {
+        int scoreTolevel = player.AddScoreForAnswer(disableCardsList.Count, (int)(gameTime / 60));
+
+        WinPanel.SetActive(true);
+        winPanel.SetEvaluation((int)gameTime, scoreTolevel, disableCardsList.Count);
+        achievementSystem.CheckAchievement(disableCardsList.Count, fieldController.DictionaryLength, fieldController.Level, gameTime);
+
+        ClearLevel();
+        SaveLevelData();
     }
 
     private void TimeCounter()
@@ -329,21 +342,17 @@ public class GameController : MonoBehaviour
 
     public void NextLevel()
     {
-        ClearLevel();
-
         gameTime = 0;
         fieldController.NewLevel();
 
         for (int i = 0; i < fieldController.SelectedWordsList.Count; i++)
             hintWordIndexList.Add(i);
 
-        SaveLevelData();
         player.SetGuessedWords();
     }
 
     public void BackFromLevel()
     {
-        ClearLevel();
         fieldController = null;
 
         player.SetGuessedWords();

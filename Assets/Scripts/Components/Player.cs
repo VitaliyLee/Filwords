@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private List<TextMeshProUGUI> scoreText;
 
     [Space(10)]
     [SerializeField] private TextMeshProUGUI noobGuessedWords;
     [SerializeField] private TextMeshProUGUI normalGuessedWords;
     [SerializeField] private TextMeshProUGUI veteranGuessedWords;
     [SerializeField] private TextMeshProUGUI professionalGuessedWords;
+
+    private int scoreRate = 2;//Множитель при отнятии очков за уровень
 
     private int score;
 
@@ -20,16 +22,22 @@ public class Player : MonoBehaviour
     public void AddScore(int Score)
     {
         score += Score;
-        scoreText.text = score.ToString();
+        for (int i = 0; i < scoreText.Count; i++)
+            scoreText[i].text = score.ToString();
     }
 
-    public void AddScoreForAnswer(int LettersCount, int answerMinutes)
+    public int AddScoreForAnswer(int LettersCount, int AnswerMinutes)
     {
-        if(answerMinutes >= LettersCount)
-            return;
+        int scoreToLevel = 0;
+        if(AnswerMinutes >= LettersCount)
+            return scoreToLevel;
 
-        score += LettersCount - answerMinutes;
-        scoreText.text = score.ToString();
+        scoreToLevel = LettersCount - AnswerMinutes * scoreRate;
+        score += scoreToLevel;
+        for (int i = 0; i < scoreText.Count; i++)
+            scoreText[i].text = score.ToString();
+
+        return scoreToLevel;
     }
 
     public void SetGuessedWords()

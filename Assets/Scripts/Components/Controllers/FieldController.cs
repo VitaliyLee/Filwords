@@ -22,6 +22,7 @@ public class FieldController
 
     public Vector2Int[,] CurrentMatrix { get => currentMatrix; }
     public int PatternModsCount { get => patternModsCount; }
+    public int DictionaryLength { get => dictionary.Count; }
 
     public FieldController(string xmlDictionaryName, int SaveLevel, List<CardData> CardsDataList)
     {
