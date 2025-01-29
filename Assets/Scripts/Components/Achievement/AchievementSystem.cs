@@ -12,6 +12,7 @@ public class AchievementSystem : MonoBehaviour
     [SerializeField] private List<Achieve> achieveList;
     [SerializeField] private AchieveMessageData achieveMessage;
     [SerializeField] private LeaderBoard leaderBoard;
+    [SerializeField] private SoundController soundController;
 
     private void OnEnable() => Saver.AchieveSaveEvent += ShowAchieveMessage;
     private void OnDisable() => Saver.AchieveSaveEvent -= ShowAchieveMessage;
@@ -61,8 +62,6 @@ public class AchievementSystem : MonoBehaviour
             Saver.SaveAchieve("16");
             Saver.SaveAchieve("17");
         }
-
-
     }
     
     public void ShowAchieveMessage(string AchieveKey)
@@ -77,7 +76,7 @@ public class AchievementSystem : MonoBehaviour
                     achieveList[i].MessageImage.sprite);
             }
         }
-
+        soundController.PlayPopUpAchievSound();
         StartCoroutine(PopUpAchieveMessage());
     }
 

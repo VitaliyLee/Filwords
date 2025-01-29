@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private AchievementSystem achievementSystem;
     [SerializeField] private LeaderBoard leaderBoard;
+    [SerializeField] private SoundController soundController;
     [SerializeField] private WinDataController winPanel;
     [SerializeField] private GameObject difficultyLevelComplited;
     [SerializeField] private MessageController messageController;
@@ -114,6 +115,8 @@ public class GameController : MonoBehaviour
                 return;
 
             selectedCardsList.Add(cardController);//Добавляет в список выделенных объектов
+            soundController.PlaySelectSoundWithRaisingTone(selectedCardsList.Count);
+
             cardController.image.color = colorsList[currentColorIndex];//Красит выбранный объект
             cardController.textLetter.color = Color.white;
             currentWord += cardController.textLetter.text;//Добавляет выбранную букву к результирубщему слову
@@ -178,6 +181,7 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < selectedCardsList.Count; i++)
                 disableCardsList.Add(selectedCardsList[i]);//Запись ячеек в список отгаданных
             currentColorIndex++;
+            soundController.PlayTrueAnswernSound();
 
             hintWordIndexList.Remove(row);
         }
@@ -189,6 +193,7 @@ public class GameController : MonoBehaviour
         //Если все слова угаданы
         if (disableCardsList.Count == (int)Mathf.Pow(fieldController.SelectedWordsList.Count, 2))
         {
+            soundController.PlayWinSound();
             fieldController.RaiseLevel(1);//1 - потому что уровни прибавляются по одному
 
             if (fieldController.CheckLevelsComplete())
@@ -338,6 +343,9 @@ public class GameController : MonoBehaviour
                 hintWordIndexList.RemoveAt(0);
             }
         }
+
+        Saver.SaveAchieve("20");//Очень-очень плохо, но и архитектура у меня КАЛ
+        soundController.PlayHintSound();
     }
 
     public void NextLevel()
@@ -356,5 +364,6 @@ public class GameController : MonoBehaviour
         fieldController = null;
 
         player.SetGuessedWords();
+        ClearLevel();
     }
 }

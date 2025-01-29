@@ -43,9 +43,9 @@ public class Player : MonoBehaviour
     public void SetGuessedWords()
     {
         //3, 4, 5, 6 - соответственно обозначают количество слов на уровне. »х всегда будет столько, но архитектуру € все равно √ј¬Ќќ сделал (
-        noobGuessedWords.text = $"{Saver.LevelNoob * 3} из 20";
-        normalGuessedWords.text = $"{Saver.LevelNormal * 4} из 20";
-        veteranGuessedWords.text = $"{Saver.LevelVeteran * 5} из 20";
-        professionalGuessedWords.text = $"{Saver.LevelProfessionsl * 6} из 20";
+        noobGuessedWords.text = $"{Saver.LevelNoob * 3} из 18";
+        normalGuessedWords.text = $"{Saver.LevelNormal * 4} из 44";
+        veteranGuessedWords.text = $"{Saver.LevelVeteran * 5} из 70";
+        professionalGuessedWords.text = $"{Saver.LevelProfessionsl * 6} из 90";
     }
 }

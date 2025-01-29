@@ -47,6 +47,7 @@ public class LeaderBoard : MonoBehaviour
         {
             leadersList[i].PositionText.text = players[i].position.ToString();
             leadersList[i].ScoreText.text = players[i].Score.ToString();
+            leadersList[i].ScoreText.color = Color.black;
             //ttt.text = $"players count: {players.Count}, Pos txt 1: {leadersList[leadersList.Count - 1].PositionText.text}, Pos txt 2: {players[i].position} --- {data.Data}";
 
             if (players[i].avatar != null && players[i].avatar != "")
@@ -61,6 +62,7 @@ public class LeaderBoard : MonoBehaviour
                     leadersList[i].PersonAvatarBg.color = leadersList[i].BgColorDefoult;
 
                 leadersList[i].CurrentPlayerBorder.gameObject.SetActive(true);
+                leadersList[i].ScoreText.color = Color.white;
                 playerPositionInRate = players[i].position;
             }
 
@@ -84,6 +86,7 @@ public class LeaderBoard : MonoBehaviour
 
             leadersList[index].PersonAvatarBg.color = currentPersonBgColor;
             leadersList[index].CurrentPlayerBorder.gameObject.SetActive(true);
+            leadersList[index].ScoreText.color = Color.white;
             playerPositionInRate = players[players.Count - 1].position;
             return;
         }
