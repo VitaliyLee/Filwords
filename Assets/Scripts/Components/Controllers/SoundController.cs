@@ -13,6 +13,7 @@ public class SoundController : MonoBehaviour
     [SerializeField] private Sprite volumeImageOff;
 
     [Space(10)]
+    [SerializeField] private AudioSource messageAudioSource;
     [SerializeField] private AudioSource mainAudioSource;
     [SerializeField] private AudioSource secondAudioSource;
 
@@ -66,11 +67,12 @@ public class SoundController : MonoBehaviour
     {
         mainAudioSource.mute = !mainAudioSource.mute;
         secondAudioSource.mute = !secondAudioSource.mute;
+        messageAudioSource.mute = secondAudioSource.mute;
 
         if (mainAudioSource.mute)
         {
             volumeButtonImage.sprite = volumeImageOff;
-            volumeButtonText.text = "Звук выключень";
+            volumeButtonText.text = "Звук выключен";
         }
         else
         {
