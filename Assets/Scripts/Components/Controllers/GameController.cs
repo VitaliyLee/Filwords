@@ -26,6 +26,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private Color colorHint;
     [SerializeField] private List<Color> colorsList;
 
+    //Ебать пиздец. Для одного туториала ....
+    public delegate void FindingWordHendler();
+    public event FindingWordHendler FindingWordEvent;
+
     private FieldController fieldController;
 
     private List<CardData> selectedCardsList;
@@ -40,7 +44,6 @@ public class GameController : MonoBehaviour
     private float gameTime;
 
     private void OnEnable() => GP_Init.OnReady += StartGame;
-
     private void OnDisable() => GP_Init.OnReady -= StartGame;
 
     private void StartGame()
@@ -181,6 +184,7 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < selectedCardsList.Count; i++)
                 disableCardsList.Add(selectedCardsList[i]);//Запись ячеек в список отгаданных
             currentColorIndex++;
+            FindingWordEvent?.Invoke();
             soundController.PlayTrueAnswernSound();
 
             hintWordIndexList.Remove(row);

@@ -8,6 +8,8 @@ public static class Saver
 {
     public delegate void AchieveSaveHendler(string AchieveKey);
     public static event AchieveSaveHendler AchieveSaveEvent;
+    public delegate void LoadHendler();
+    public static event LoadHendler LoadEvent;
 
     public static int LevelNoob { get; private set; }
     public static int LevelNormal { get; private set; }
@@ -85,6 +87,7 @@ public static class Saver
         Score = GP_Player.GetInt("Score");
 
         AchieveKeysString = GP_Player.GetString("AchieveKeysString") ?? "";
+        LoadEvent?.Invoke();
     }
     //Все ключи соответствуют названиям полей этого класса
 }
