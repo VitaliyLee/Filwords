@@ -69,7 +69,7 @@ public static class Saver
 
     public static void SaveAchieve(string Key)
     {
-        if(!AchieveKeysString.Contains(Key))
+        if (!AchieveKeysString.Contains(Key))
         {
             AchieveKeysString += $",{Key}";
             AchieveSaveEvent?.Invoke(Key);

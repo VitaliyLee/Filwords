@@ -13,6 +13,9 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private GameObject wordThree;
     [SerializeField] private GameObject finalWorFinding;
 
+    [Space(10)]
+    [SerializeField] private GameObject tutorHintOne, tutorHintTwo;
+
     private int wordIndex = 0;
 
     private void OnEnable() => Saver.LoadEvent += StartTutorial;
@@ -35,11 +38,13 @@ public class TutorialController : MonoBehaviour
         {
             wordTwo.SetActive(true);
             wordThree.SetActive(false);
+            tutorHintOne.SetActive(false);
         }
         else if (wordIndex == 2)
         {
             wordTwo.SetActive(true);
             wordThree.SetActive(true);
+            tutorHintTwo.SetActive(false);
         }
         else
         {
@@ -49,6 +54,7 @@ public class TutorialController : MonoBehaviour
 
             gameController.FindingWordEvent -= NextWord;
             finalWorFinding.SetActive(true);
+            Saver.SaveAchieve("TutorialCompleted");
         }
     }
 }

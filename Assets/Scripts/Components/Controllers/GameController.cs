@@ -172,6 +172,7 @@ public class GameController : MonoBehaviour
                 //Вывод сообщения если слово не соответствует паттерну
                 if (GetLetterPos(row, i) != selectedCardsList[i].cardIndex)
                 {
+                    Saver.SaveAchieve("FirstMistake");
                     messageController.MessageText = "Попробуйте собрать слово по другому!";
                     messageController.gameObject.SetActive(true);
 
@@ -197,7 +198,6 @@ public class GameController : MonoBehaviour
         //Если все слова угаданы
         if (disableCardsList.Count == (int)Mathf.Pow(fieldController.SelectedWordsList.Count, 2))
         {
-            soundController.PlayWinSound();
             fieldController.RaiseLevel(1);//1 - потому что уровни прибавляются по одному
 
             if (fieldController.CheckLevelsComplete())

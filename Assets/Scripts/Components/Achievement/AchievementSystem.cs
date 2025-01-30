@@ -46,22 +46,27 @@ public class AchievementSystem : MonoBehaviour
                 break;
         }
 
-        if (Saver.AchieveKeysString.Contains("10") && Saver.AchieveKeysString.Contains("11") && Saver.AchieveKeysString.Contains("12") && Saver.AchieveKeysString.Contains("13"))
-            Saver.SaveAchieve("14");
+        //Достижение за прохождение всех уровней сложности
+        if (Saver.AchieveKeysString.Contains("AllLevelsNewbie") && Saver.AchieveKeysString.Contains("AllLevelsNormal") && Saver.AchieveKeysString.Contains("AllLevelsVeteran") && Saver.AchieveKeysString.Contains("AllLevelsProffesional"))
+            Saver.SaveAchieve("AllLevelsComplete");
 
+        //Достижения лидербордов
         if (leaderBoard.playerPositionInRate == 3)
-            Saver.SaveAchieve("15");
+            Saver.SaveAchieve("ThirdRanking");
         if (leaderBoard.playerPositionInRate == 2)
         {
-            Saver.SaveAchieve("15");
-            Saver.SaveAchieve("16");
+            Saver.SaveAchieve("ThirdRanking");
+            Saver.SaveAchieve("SecondRanking");
         }
         if (leaderBoard.playerPositionInRate == 1)
         {
-            Saver.SaveAchieve("15");
-            Saver.SaveAchieve("16");
-            Saver.SaveAchieve("17");
+            Saver.SaveAchieve("ThirdRanking");
+            Saver.SaveAchieve("SecondRanking");
+            Saver.SaveAchieve("FirstRanking");
         }
+
+        if(GameTime >= 300)
+            Saver.SaveAchieve("LongBreak");
     }
     
     public void ShowAchieveMessage(string AchieveKey)
@@ -110,43 +115,43 @@ public class AchievementSystem : MonoBehaviour
     {
         //Достижения 3х3
         if (CurrentLevel == 1)
-            Saver.SaveAchieve("2");
+            Saver.SaveAchieve("FirstNewbie");
         if (GameTime <= 30)
-            Saver.SaveAchieve("6");
-        if(CurrentLevel * 3 == dictionaryLength)
-            Saver.SaveAchieve("10");
+            Saver.SaveAchieve("FastNewbie");
+        if(CurrentLevel * 3 == dictionaryLength)//Прохождение уровня сложности
+            Saver.SaveAchieve("AllLevelsNewbie");
     }
 
     private void FoureOnFoureAchieve(int dictionaryLength, int CurrentLevel, float GameTime)
     {
         //Достижения 4х4
         if (CurrentLevel == 1)
-            Saver.SaveAchieve("3");
+            Saver.SaveAchieve("FirstNormal");
         if (GameTime <= 60)
-            Saver.SaveAchieve("7");
-        if (CurrentLevel * 4 == dictionaryLength)
-            Saver.SaveAchieve("11");
+            Saver.SaveAchieve("FastNormal");
+        if (CurrentLevel * 4 == dictionaryLength)//Прохождение уровня сложности
+            Saver.SaveAchieve("AllLevelsNormal");
     }
 
     private void FiveOnFiveAchieve(int dictionaryLength, int CurrentLevel, float GameTime)
     {
         //Достижения 5х5    
         if (CurrentLevel == 1)
-            Saver.SaveAchieve("4");
+            Saver.SaveAchieve("FirstVeteran");
         if (GameTime <= 90)
-            Saver.SaveAchieve("8");
-        if (CurrentLevel * 5 == dictionaryLength)
-            Saver.SaveAchieve("12");
+            Saver.SaveAchieve("FastVeteran");
+        if (CurrentLevel * 5 == dictionaryLength)//Прохождение уровня сложности
+            Saver.SaveAchieve("AllLevelsVeteran");
     }
 
     private void SixOnSixAchieve(int dictionaryLength, int CurrentLevel, float GameTime)
     {
         //Достижения 6х6
         if (CurrentLevel == 1)
-            Saver.SaveAchieve("5");
+            Saver.SaveAchieve("FirstProffesional");
         if (GameTime <= 120)
-            Saver.SaveAchieve("9");
-        if (CurrentLevel * 6 == dictionaryLength)
-            Saver.SaveAchieve("13");
+            Saver.SaveAchieve("FastProffesional");
+        if (CurrentLevel * 6 == dictionaryLength)//Прохождение уровня сложности
+            Saver.SaveAchieve("AllLevelsProffesional");
     }
 }
