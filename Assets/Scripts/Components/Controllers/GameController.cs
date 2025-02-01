@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour
 
         Saver.Load();//«агружает данные игрока с сервера
         player.SetGuessedWords();//«адает колличсетво угаданных слов на каждый уровень
+        player.ViewResettingButton();
         player.AddScore(Saver.Score);
         achievementSystem.UpdateAchievement();
         leaderBoard.Fetch();
@@ -198,7 +199,8 @@ public class GameController : MonoBehaviour
         //≈сли все слова угаданы
         if (disableCardsList.Count == (int)Mathf.Pow(fieldController.SelectedWordsList.Count, 2))
         {
-            fieldController.RaiseLevel(1);//1 - потому что уровни прибавл€ютс€ по одному
+            if(!fieldController.CheckLevelsComplete())
+                fieldController.RaiseLevel(1);//1 - потому что уровни прибавл€ютс€ по одному
 
             if (fieldController.CheckLevelsComplete())
             {
@@ -207,6 +209,7 @@ public class GameController : MonoBehaviour
             }
 
             CompleteLevel(winPanel.gameObject);
+            soundController.PlayWinSound();
         }
     }
 
@@ -282,7 +285,10 @@ public class GameController : MonoBehaviour
     private void ClearLevel()
     {
         for (int i = 0; i < disableCardsList.Count; i++)
+        {
+            disableCardsList[i].textLetter.color = disableCardsList[i].defoultColor;
             disableCardsList[i].image.color = Color.white;
+        }
 
         disableCardsList.Clear();
         hintWordIndexList.Clear();
@@ -361,6 +367,7 @@ public class GameController : MonoBehaviour
             hintWordIndexList.Add(i);
 
         player.SetGuessedWords();
+        player.ViewResettingButton();
     }
 
     public void BackFromLevel()
@@ -368,6 +375,7 @@ public class GameController : MonoBehaviour
         fieldController = null;
 
         player.SetGuessedWords();
+        player.ViewResettingButton();
         ClearLevel();
     }
 }

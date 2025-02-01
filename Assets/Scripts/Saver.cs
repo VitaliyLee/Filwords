@@ -18,6 +18,21 @@ public static class Saver
     public static int Score { get; private set; }
     public static string AchieveKeysString { get; private set; }
 
+    public static void ResettingLevelProgress()
+    {
+        LevelNoob = 0;
+        LevelNormal = 0;
+        LevelVeteran = 0;
+        LevelProfessionsl = 0;
+
+        GP_Player.Set("LevelNoob", 0);
+        GP_Player.Set("LevelNormal", 0);
+        GP_Player.Set("LevelVeteran", 0);
+        GP_Player.Set("LevelProfessionsl", 0);
+
+        GP_Player.Sync(storage: SyncStorageType.preffered);
+    }
+
     public static void SaveValue(string Key, int Value)
     {
         switch (Key)
@@ -37,7 +52,6 @@ public static class Saver
         }
 
         GP_Player.Set(Key, Value);
-
         GP_Player.Sync(storage: SyncStorageType.preffered);
     }
 
@@ -79,11 +93,16 @@ public static class Saver
 
     public static void Load()
     {
-        //upgradeSystem.AddMoney(GP_Player.GetFloat("allMoney"));
         LevelNoob = GP_Player.GetInt("LevelNoob");
         LevelNormal = GP_Player.GetInt("LevelNormal");
         LevelVeteran = GP_Player.GetInt("LevelVeteran");
         LevelProfessionsl = GP_Player.GetInt("LevelProfessionsl");
+        Score = GP_Player.GetInt("Score");
+
+        LevelNoob = 7;
+        LevelNormal = 9;
+        LevelVeteran = 20;
+        LevelProfessionsl = 5;
         Score = GP_Player.GetInt("Score");
 
         AchieveKeysString = GP_Player.GetString("AchieveKeysString") ?? "";

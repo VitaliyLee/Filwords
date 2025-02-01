@@ -28,7 +28,13 @@ public class TutorialController : MonoBehaviour
             gameObject.SetActive(false);
             return;
         }
+
         gameController.FindingWordEvent += NextWord;
+    }
+
+    public void TrainingRefusal()
+    {
+        gameController.FindingWordEvent -= NextWord;
     }
 
     private void NextWord()

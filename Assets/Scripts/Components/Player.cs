@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
     [SerializeField] private TextMeshProUGUI veteranGuessedWords;
     [SerializeField] private TextMeshProUGUI professionalGuessedWords;
 
+    [Space(10)]
+    [SerializeField] private GameObject resetingLevelButton;
+    [SerializeField] private List<LevelData> levelsData;
+
     private int scoreRate = 2;//Множитель при отнятии очков за уровень
 
     private int score;
@@ -47,5 +51,42 @@ public class Player : MonoBehaviour
         normalGuessedWords.text = $"{Saver.LevelNormal * 4} из 44";
         veteranGuessedWords.text = $"{Saver.LevelVeteran * 5} из 70";
         professionalGuessedWords.text = $"{Saver.LevelProfessionsl * 6} из 90";
+    }
+
+    public void ResettingProgress()
+    {
+        Saver.ResettingLevelProgress();
+        SetGuessedWords();
+    }
+
+    public void ViewResettingButton()
+    {
+        var dict = new DictionaryController();
+        int index = 0;
+
+        foreach(LevelData item in levelsData)
+        {
+            if (dict.GetDictionary(item.DictionaryName).Count == Saver.LevelNoob * 3)
+            {
+                index++;
+            }
+            if (dict.GetDictionary(item.DictionaryName).Count == Saver.LevelNormal * 4)
+            {
+                index++;
+            }
+            if (dict.GetDictionary(item.DictionaryName).Count == Saver.LevelVeteran * 5)
+            {
+                index++;
+            }
+            if (dict.GetDictionary(item.DictionaryName).Count == Saver.LevelProfessionsl * 6)
+            {
+                index++;
+            }
+        }
+
+        if (index >= 4)
+        {
+            resetingLevelButton.SetActive(true);
+        }
     }
 }

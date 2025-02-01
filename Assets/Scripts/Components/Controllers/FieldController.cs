@@ -126,7 +126,7 @@ public class FieldController
                 }
 
                 //Я бы куда нибудь это убрал
-                cardsMatrix[i, j].textLetter.color = cardsMatrix[i, j].defoultColor;
+                //cardsMatrix[i, j].textLetter.color = cardsMatrix[i, j].defoultColor;
 
                 cardsMatrix[i, j].isHint = false;
             }
