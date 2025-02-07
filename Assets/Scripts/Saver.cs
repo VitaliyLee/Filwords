@@ -99,13 +99,13 @@ public static class Saver
         LevelProfessionsl = GP_Player.GetInt("LevelProfessionsl");
         Score = GP_Player.GetInt("Score");
 
-        LevelNoob = 7;
-        LevelNormal = 9;
-        LevelVeteran = 20;
-        LevelProfessionsl = 5;
-        Score = GP_Player.GetInt("Score");
+        //LevelNoob = 6;
+        //LevelNormal = 9;
+        //LevelVeteran = 20;
+        //LevelProfessionsl = 5;
+        //Score = GP_Player.GetInt("Score");
 
-        AchieveKeysString = GP_Player.GetString("AchieveKeysString") ?? "";
+        AchieveKeysString = GP_Player.GetString("AchieveKeysString") ?? "0";
         LoadEvent?.Invoke();
     }
     //Все ключи соответствуют названиям полей этого класса

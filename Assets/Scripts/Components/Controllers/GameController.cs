@@ -215,6 +215,7 @@ public class GameController : MonoBehaviour
 
     private void CompleteLevel(GameObject WinPanel)
     {
+        Ad.ShowFullscreenAd((int)gameTime);
         int scoreTolevel = player.AddScoreForAnswer(disableCardsList.Count, (int)(gameTime / 60));
 
         WinPanel.SetActive(true);
@@ -316,24 +317,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void StartGame(LevelData levelData)
-    {
-        fieldController = new FieldController(levelData.DictionaryName, levelData.Level, levelData.CardsList);
-
-        if (fieldController.CheckLevelsComplete())
-        {
-            difficultyLevelComplited.SetActive(true);
-
-            return;
-        }
-
-        for (int i = 0; i < fieldController.SelectedWordsList.Count; i++)
-            hintWordIndexList.Add(i);
-
-        gameTime = 0;
-    }
-
-    public void GetHint()
+    private void GetHint()
     {
         if (hintWordIndexList.Count <= 0)
         {
@@ -358,6 +342,23 @@ public class GameController : MonoBehaviour
         soundController.PlayHintSound();
     }
 
+    public void StartGame(LevelData levelData)
+    {
+        fieldController = new FieldController(levelData.DictionaryName, levelData.Level, levelData.CardsList);
+
+        if (fieldController.CheckLevelsComplete())
+        {
+            difficultyLevelComplited.SetActive(true);
+
+            return;
+        }
+
+        for (int i = 0; i < fieldController.SelectedWordsList.Count; i++)
+            hintWordIndexList.Add(i);
+
+        gameTime = 0;
+    }
+
     public void NextLevel()
     {
         gameTime = 0;
@@ -378,4 +379,6 @@ public class GameController : MonoBehaviour
         player.ViewResettingButton();
         ClearLevel();
     }
+
+    public void ShowRewarded() => Ad.ShowRewardedAd(() => GetHint());
 }
