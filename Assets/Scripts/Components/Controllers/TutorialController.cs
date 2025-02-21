@@ -6,6 +6,7 @@ using UnityEngine;
 public class TutorialController : MonoBehaviour
 {
     [SerializeField] private GameController gameController;
+    [SerializeField] private GameObject tutorAnswer;
 
     [Space(10)]
     [SerializeField] private GameObject wordOne;
@@ -23,9 +24,9 @@ public class TutorialController : MonoBehaviour
 
     public void StartTutorial()
     {
-        if (Saver.Score > 0)
+        if (Saver.Score == 0)
         {
-            gameObject.SetActive(false);
+            tutorAnswer.SetActive(true);
             return;
         }
 
