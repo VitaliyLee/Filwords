@@ -6,6 +6,7 @@ using UnityEngine;
 
 public static class Ad
 {
+    private static SoundController SoundController;
     private static Action actionAfterRewordedAd;
     private static int timeAfterLastFullscreenCalling;
     private static int timeFullscreenRate = 120;
@@ -35,8 +36,9 @@ public static class Ad
     #endregion
 
     #region Fullscreen
-    public static void ShowFullscreenAd(int gameTime)
+    public static void ShowFullscreenAd(int gameTime, SoundController soundController)
     {
+        SoundController = soundController;
         timeAfterLastFullscreenCalling += gameTime;
         if (timeAfterLastFullscreenCalling >= timeFullscreenRate)
         {
@@ -49,8 +51,8 @@ public static class Ad
     }
 
     // Начался показ
-    private static void OnFullscreenStart() => Debug.Log("ON FULLSCREEN START");
+    private static void OnFullscreenStart() => SoundController.VolumeOnOffAd();
     // Закончился показ
-    private static void OnFullscreenClose(bool success) => Debug.Log("ON FULLSCREEN CLOSE");
+    private static void OnFullscreenClose(bool success) => SoundController.VolumeOnOffAd();
     #endregion
 }

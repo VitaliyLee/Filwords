@@ -186,6 +186,7 @@ public class GameController : MonoBehaviour
             for (int i = 0; i < selectedCardsList.Count; i++)
                 disableCardsList.Add(selectedCardsList[i]);//Запись ячеек в список отгаданных
             currentColorIndex++;
+
             FindingWordEvent?.Invoke();
             soundController.PlayTrueAnswernSound();
 
@@ -215,7 +216,7 @@ public class GameController : MonoBehaviour
 
     private void CompleteLevel(GameObject WinPanel)
     {
-        Ad.ShowFullscreenAd((int)gameTime);
+        Ad.ShowFullscreenAd((int)gameTime, soundController);
         int scoreTolevel = player.AddScoreForAnswer(disableCardsList.Count, (int)(gameTime / 60));
 
         WinPanel.SetActive(true);

@@ -1,11 +1,12 @@
+using GamePush;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OurGamesControl : MonoBehaviour
 {
-    public void OpenOtherGame(string URL)
+    public void OpenOtherGame()
     {
-        Application.OpenURL(URL);
+        GP_GamesCollections.Open("ALL");
     }
 }

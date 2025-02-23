@@ -21,6 +21,7 @@ public class SoundController : MonoBehaviour
     [SerializeField] private float pitchRate;
     [SerializeField] private AudioClip buttonClip, HintClip, trueAnswerClip, SelectClip, popUpAchievClip, winClip;
     private float pitchRateDefoult = 1f;
+    private bool audioIsMute = false;
 
     public void PlayButtonSound()
     {
@@ -67,7 +68,9 @@ public class SoundController : MonoBehaviour
     {
         mainAudioSource.mute = !mainAudioSource.mute;
         secondAudioSource.mute = !secondAudioSource.mute;
+
         messageAudioSource.mute = secondAudioSource.mute;
+        audioIsMute = mainAudioSource.mute;
 
         if (mainAudioSource.mute)
         {
@@ -79,5 +82,17 @@ public class SoundController : MonoBehaviour
             volumeButtonImage.sprite = volumeImageOn;
             volumeButtonText.text = "Звук включен";
         }
+    }
+
+    public void VolumeOnOffAd()
+    {
+        if (audioIsMute)
+            return;
+
+        mainAudioSource.mute = !mainAudioSource.mute;
+        secondAudioSource.mute = !secondAudioSource.mute;
+        messageAudioSource.mute = secondAudioSource.mute;
+
+        return;
     }
 }

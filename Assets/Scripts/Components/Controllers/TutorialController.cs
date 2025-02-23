@@ -27,10 +27,9 @@ public class TutorialController : MonoBehaviour
         if (Saver.Score == 0)
         {
             tutorAnswer.SetActive(true);
+            gameController.FindingWordEvent += NextWord;
             return;
         }
-
-        gameController.FindingWordEvent += NextWord;
     }
 
     public void TrainingRefusal()
